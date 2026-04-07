@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}<Analytics /></body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+        <Script src="https://solvinghealth.com/chat-widget.js" data-channel="coopccare" data-color="#4A7C59" strategy="lazyOnload" />
+        <Script src="https://solvinghealth.com/voice-embed.js" data-site="coop-care" strategy="lazyOnload" />
+      </body>
     </html>
   );
 }
