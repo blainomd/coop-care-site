@@ -242,6 +242,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Connector */}
+      <section id="connector" className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-bark mb-4">
+            Get the co-op.care connector
+          </h2>
+          <p className="text-bark-light text-lg mb-8 max-w-xl mx-auto">
+            Add the SolvingHealth connector to Claude and get instant access to care tools, HSA savings estimates, caregiver matching, and cooperative services.
+          </p>
+          <div className="bg-cream rounded-2xl border border-sage-light/30 p-6 text-left max-w-lg mx-auto mb-8">
+            <p className="text-xs font-medium text-bark-light/50 uppercase tracking-wider mb-3">Claude Desktop MCP Config</p>
+            <pre className="text-sm text-bark overflow-x-auto whitespace-pre font-mono leading-relaxed">{`"coop-care": {
+  "command": "npx",
+  "args": ["-y", "@anthropic-ai/mcp-remote",
+    "https://solvinghealth.com/mcp"]
+}`}</pre>
+          </div>
+          <p className="text-bark-light text-sm">
+            Don&apos;t have Claude? Get it free at{" "}
+            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-sage-dark font-medium hover:underline">claude.ai</a>
+            {" "}or use the chat and voice widgets on this page.
+          </p>
+        </div>
+      </section>
+
       {/* Ecosystem */}
       <section className="py-12 px-6 bg-bark">
         <div className="max-w-4xl mx-auto">
