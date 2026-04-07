@@ -26,9 +26,20 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="theme-color" content="#4A7C59" />
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
+        <Script id="sw-register" strategy="afterInteractive">{`
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+          }
+        `}</Script>
         <Script src="https://solvinghealth.com/chat-widget.js" data-channel="coopccare" data-color="#4A7C59" strategy="lazyOnload" />
         <Script src="https://solvinghealth.com/voice-embed.js" data-site="coop-care" strategy="lazyOnload" />
       </body>
