@@ -16,12 +16,12 @@ function EmailForm({ variant = "light", placeholder = "your@email.com", button =
 }
 
 const ENTRY_POINTS = [
-  { q: "Does your back hurt?", a: "$10/month yoga in a neighbor's backyard", link: "https://doesyourbackhurt.com", color: "bg-[#0D9488]" },
-  { q: "Tired of $5 kombucha?", a: "$2.50 from a garage tap. Zero waste.", link: "https://fillforward.com", color: "bg-[#D97706]" },
-  { q: "Want to grow your own food?", a: "$89 mushroom incubator. Harvest in 25 days.", link: "https://sh-room.com", color: "bg-[#7A9166]" },
-  { q: "HSA covers more than you think?", a: "Save 28-36% on care with ComfortCard.", link: "https://comfortcard.org", color: "bg-[#8B6914]" },
-  { q: "Scared of the care conversation?", a: "Talk first. Documents follow.", link: "https://caregoals.com", color: "bg-[#4A6741]" },
-  { q: "PE bought your home care agency?", a: "Worker-owned. PE-proof. $28/hr + equity.", link: "https://ownyourcare.co", color: "bg-[#DC2626]" },
+  { q: "Does your back hurt?", a: "$10/month yoga in a neighbor's backyard", link: "https://www.doesyourbackhurt.com", color: "bg-[#0D9488]" },
+  { q: "Tired of $5 kombucha?", a: "$2.50 from a garage tap. Zero waste.", link: "https://www.fillforward.com", color: "bg-[#D97706]" },
+  { q: "Want to grow your own food?", a: "$89 mushroom incubator. Harvest in 25 days.", link: "https://www.sh-room.com", color: "bg-[#7A9166]" },
+  { q: "HSA covers more than you think?", a: "Save 28-36% on care with ComfortCard.", link: "https://www.comfortcard.org", color: "bg-[#8B6914]" },
+  { q: "Hip won't stop hurting?", a: "Free AI assessment. No login. Just answers.", link: "https://www.hippain.help", color: "bg-[#4A6741]" },
+  { q: "Worried about falling?", a: "Free fall risk assessment. Stay independent.", link: "https://www.fallprevention.help", color: "bg-[#DC2626]" },
   { q: "Dog walker cancelled again?", a: "$12/walk. Same cooperative. Same trust.", link: "#services", color: "bg-sage-dark" },
   { q: "Lonely?", a: "Tuesday sauna. Neighbors who know your name.", link: "#community", color: "bg-bark" },
   { q: "Want to earn $28/hr with equity?", a: "Become a caregiver-owner.", link: "#join", color: "bg-[#1B2A4A]" },
@@ -81,7 +81,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-bark text-center mb-4">Every front door leads here.</h2>
-          <p className="text-bark-light text-center mb-12 max-w-lg mx-auto">17 websites. 17 pain points. One cooperative. Which one brought you?</p>
+          <p className="text-bark-light text-center mb-12 max-w-lg mx-auto">25 websites. 25 pain points. One cooperative. Which one brought you?</p>
           <div className="grid sm:grid-cols-3 gap-3">
             {ENTRY_POINTS.map((ep) => (
               <a key={ep.q} href={ep.link} target={ep.link.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
@@ -256,7 +256,7 @@ export default function Home() {
             <pre className="text-sm text-bark overflow-x-auto whitespace-pre font-mono leading-relaxed">{`"coop-care": {
   "command": "npx",
   "args": ["-y", "@anthropic-ai/mcp-remote",
-    "https://solvinghealth.com/mcp"]
+    "https://www.solvinghealth.com/mcp"]
 }`}</pre>
           </div>
           <p className="text-bark-light text-sm">
@@ -272,15 +272,15 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <p className="text-white/20 text-xs text-center tracking-widest uppercase mb-6">The Ecosystem</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-            <a href="https://sh-room.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">sh-room.com</a>
-            <a href="https://fillforward.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fillforward.com</a>
-            <a href="https://comfortcard.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">comfortcard.org</a>
-            <a href="https://caregoals.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">caregoals.com</a>
-            <a href="https://surgeonvalue.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">surgeonvalue.com</a>
-            <a href="https://solvinghealth.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">solvinghealth.com</a>
-            <a href="https://doesyourbackhurt.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">doesyourbackhurt.com</a>
-            <a href="https://themissedcode.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">themissedcode.com</a>
-            <a href="https://lastconversation.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">lastconversation.org</a>
+            <a href="https://www.solvinghealth.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">solvinghealth.com</a>
+            <a href="https://www.surgeonvalue.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">surgeonvalue.com</a>
+            <a href="https://www.comfortcard.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">comfortcard.org</a>
+            <a href="https://www.carescircle.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">carescircle.com</a>
+            <a href="https://www.mapofyou.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">mapofyou.com</a>
+            <a href="https://www.sh-room.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">sh-room.com</a>
+            <a href="https://www.fillforward.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fillforward.com</a>
+            <a href="https://www.opusocial.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">opusocial.com</a>
+            <a href="https://www.doesyourbackhurt.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">doesyourbackhurt.com</a>
           </div>
           <p className="text-center text-white/10 text-xs mt-8">Built entirely by AI. Boulder, Colorado.</p>
         </div>
