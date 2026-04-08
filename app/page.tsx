@@ -2,16 +2,45 @@
 
 import { useState } from "react";
 
-function EmailForm({ variant = "light", placeholder = "your@email.com", button = "Join" }: { variant?: "light" | "dark"; placeholder?: string; button?: string }) {
-  const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
-  if (done) return <p className={`text-sm font-medium ${variant === "dark" ? "text-sage-light" : "text-sage-dark"}`}>You&apos;re in. Welcome to the cooperative.</p>;
+function HSACalculator() {
+  const [monthlySpend, setMonthlySpend] = useState(500);
+  const taxRate = 0.32;
+  const annualSpend = monthlySpend * 12;
+  const annualSavings = Math.round(annualSpend * taxRate);
+  const monthlySavings = Math.round(monthlySpend * taxRate);
+
   return (
-    <form onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-      <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={placeholder}
-        className={`flex-1 px-5 py-3 rounded-full text-sm outline-none ${variant === "dark" ? "bg-white/10 text-white placeholder:text-white/40 border border-white/20 focus:border-white/50" : "bg-white text-bark placeholder:text-bark-light/50 border border-sage-light focus:border-sage"}`} />
-      <button type="submit" className={`px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap ${variant === "dark" ? "bg-white text-sage-dark hover:bg-sage-50" : "bg-sage-dark text-white hover:bg-bark"} transition-colors`}>{button}</button>
-    </form>
+    <div className="max-w-lg mx-auto">
+      <div className="mb-8">
+        <label className="block text-sm font-medium text-white/60 mb-3">Monthly care spend</label>
+        <input
+          type="range"
+          min={100}
+          max={3000}
+          step={50}
+          value={monthlySpend}
+          onChange={(e) => setMonthlySpend(Number(e.target.value))}
+          className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-sage-light"
+        />
+        <div className="flex justify-between text-xs text-white/30 mt-2">
+          <span>$100/mo</span>
+          <span className="text-white font-medium text-lg">${monthlySpend}/mo</span>
+          <span>$3,000/mo</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-white/5 rounded-xl p-5 text-center">
+          <div className="text-3xl font-bold text-sage-light">${monthlySavings}</div>
+          <div className="text-xs text-white/40 mt-1">saved per month</div>
+        </div>
+        <div className="bg-white/5 rounded-xl p-5 text-center">
+          <div className="text-3xl font-bold text-sage-light">${annualSavings.toLocaleString()}</div>
+          <div className="text-xs text-white/40 mt-1">saved per year</div>
+        </div>
+      </div>
+      <p className="text-center text-white/30 text-xs mt-4">Based on 32% combined tax rate. HSA/FSA pays with pre-tax dollars — you keep the difference.</p>
+    </div>
   );
 }
 
@@ -22,8 +51,8 @@ const ENTRY_POINTS = [
   { q: "HSA covers more than you think?", a: "Save 28-36% on care with ComfortCard.", link: "https://www.comfortcard.org", color: "bg-[#8B6914]" },
   { q: "Hip won't stop hurting?", a: "Free AI assessment. No login. Just answers.", link: "https://www.hippain.help", color: "bg-[#4A6741]" },
   { q: "Worried about falling?", a: "Free fall risk assessment. Stay independent.", link: "https://www.fallprevention.help", color: "bg-[#DC2626]" },
+  { q: "Memory slipping?", a: "Free cognitive screening. Know where you stand.", link: "https://www.memoryloss.help", color: "bg-[#6B4C8A]" },
   { q: "Dog walker cancelled again?", a: "$12/walk. Same cooperative. Same trust.", link: "#services", color: "bg-sage-dark" },
-  { q: "Lonely?", a: "Tuesday sauna. Neighbors who know your name.", link: "#community", color: "bg-bark" },
   { q: "Want to earn $28/hr with equity?", a: "Become a caregiver-owner.", link: "#join", color: "bg-[#1B2A4A]" },
 ];
 
@@ -70,8 +99,9 @@ export default function Home() {
             They join because their back hurts. Because the kombucha is cheaper.
             Because Tuesday was lonely. The care is already there when they need it.
           </p>
-          <div className="mt-10 flex justify-center">
-            <EmailForm variant="light" button="Get Started" />
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-sage-dark text-white hover:bg-bark transition-colors">Explore Services</a>
+            <a href="#join" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-bark border border-sage-light hover:border-sage transition-colors">Learn About Membership</a>
           </div>
           <p className="mt-3 text-xs text-bark-light/50">Boulder, CO. Worker-owned. Physician-supervised.</p>
         </div>
@@ -200,6 +230,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* HSA Savings Calculator */}
+      <section className="py-20 px-6 bg-sage-dark text-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">See what you save with HSA/FSA.</h2>
+            <p className="text-sage-light text-lg">Care through co-op.care is HSA/FSA eligible. That means you pay with pre-tax dollars and keep 28-36% instantly.</p>
+          </div>
+          <HSACalculator />
+        </div>
+      </section>
+
       {/* The Mission */}
       <section id="community" className="py-20 px-6 bg-sage-50">
         <div className="max-w-2xl mx-auto text-center">
@@ -221,8 +262,9 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Join the cooperative.</h2>
           <p className="text-sage-light mb-8">Boulder, CO. Launching 2026. 10 garages. 200 families. Care everywhere.</p>
-          <div className="flex justify-center mb-6">
-            <EmailForm variant="dark" button="I'm In" />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-sage-dark hover:bg-sage-50 transition-colors">Explore Services</a>
+            <a href="#connector" className="px-6 py-3 rounded-full text-sm font-medium bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors">Get the Connector</a>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-12 max-w-sm mx-auto">
@@ -275,12 +317,13 @@ export default function Home() {
             <a href="https://www.solvinghealth.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">solvinghealth.com</a>
             <a href="https://www.surgeonvalue.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">surgeonvalue.com</a>
             <a href="https://www.comfortcard.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">comfortcard.org</a>
-            <a href="https://www.carescircle.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">carescircle.com</a>
             <a href="https://www.mapofyou.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">mapofyou.com</a>
             <a href="https://www.sh-room.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">sh-room.com</a>
             <a href="https://www.fillforward.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fillforward.com</a>
             <a href="https://www.opusocial.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">opusocial.com</a>
-            <a href="https://www.doesyourbackhurt.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">doesyourbackhurt.com</a>
+            <a href="https://www.hippain.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">hippain.help</a>
+            <a href="https://www.fallprevention.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fallprevention.help</a>
+            <a href="https://www.memoryloss.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">memoryloss.help</a>
           </div>
           <p className="text-center text-white/10 text-xs mt-8">Built entirely by AI. Boulder, Colorado.</p>
         </div>
