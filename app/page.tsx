@@ -78,10 +78,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-light/30">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <svg viewBox="0 0 100 100" className="w-6 h-6">
-              <path d="M48 10C28 10 10 28 10 50C10 72 28 90 48 90" fill="#4A6741" />
-              <path d="M52 10C72 10 90 28 90 50C90 72 72 90 52 90" fill="#4A6741" />
-            </svg>
+            <img src="/icon.svg" alt="co-op.care" className="w-8 h-8 rounded-md" />
             <span className="text-lg font-bold tracking-tight text-bark">co-op.care</span>
           </div>
           <a href="#join" className="text-sm px-4 py-2 bg-sage-dark text-white rounded-full hover:bg-bark transition-colors">Join the Cooperative</a>
@@ -100,8 +97,8 @@ export default function Home() {
             Because Tuesday was lonely. The care is already there when they need it.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-sage-dark text-white hover:bg-bark transition-colors">Explore Services</a>
-            <a href="#join" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-bark border border-sage-light hover:border-sage transition-colors">Learn About Membership</a>
+            <a href="/interpret" className="px-6 py-3 rounded-full text-sm font-medium bg-sage-dark text-white hover:bg-bark transition-colors">Upload a report. Get answers.</a>
+            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-bark border border-sage-light hover:border-sage transition-colors">Explore Services</a>
           </div>
           <p className="mt-3 text-xs text-bark-light/50">Boulder, CO. Worker-owned. Physician-supervised.</p>
         </div>
