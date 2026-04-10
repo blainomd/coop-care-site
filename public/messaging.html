@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messages | Kindred Hearth</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#baf0b6",
+                        "surface-dim": "#dcdad5",
+                        "on-surface": "#1c1c19",
+                        "on-primary-fixed": "#002020",
+                        "on-primary-container": "#abe8e7",
+                        "on-secondary-container": "#3e6d3e",
+                        "on-secondary-fixed-variant": "#215025",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline-variant": "#bfc8c8",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "on-error-container": "#93000a",
+                        "outline": "#707978",
+                        "background": "#fcf9f4",
+                        "surface-tint": "#2a6767",
+                        "primary-fixed-dim": "#95d1d1",
+                        "on-tertiary-fixed-variant": "#673d11",
+                        "tertiary-fixed": "#ffdcc1",
+                        "surface-variant": "#e5e2dd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#f8ba83",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#39693b",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary": "#6a3f13",
+                        "surface-container-high": "#ebe8e3",
+                        "primary": "#0c5252",
+                        "on-primary-fixed-variant": "#074f4f",
+                        "primary-fixed": "#b1eeed",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffd4b2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#9fd49b",
+                        "inverse-primary": "#95d1d1",
+                        "surface-bright": "#fcf9f4",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-container": "#b8edb3",
+                        "on-surface-variant": "#3f4848",
+                        "surface": "#fcf9f4",
+                        "inverse-surface": "#31302d",
+                        "primary-container": "#2d6a6a",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0ede8",
+                        "on-secondary-fixed": "#002105",
+                        "tertiary-container": "#865629",
+                        "on-background": "#1c1c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md text-[#0c5252] dark:text-[#b8edb3] font-['Plus_Jakarta_Sans'] font-semibold tracking-tight docked full-width top-0 sticky z-50 tonal-depth-shift-no-border flat no shadows">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="Caregiver profile photo" class="w-full h-full object-cover" data-alt="portrait of a professional female caregiver with a warm and empathetic expression, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCMOnq4Lwrv0RMcLGfHpvaSuyLVoD2xiCcynNbd24ze5YfNUb9biQrK9w_w3epj9BxLc7QecYSGxxDtPPKzlcMaLGi3R2xnZHi-1h9ZXF8-vpwra0IZZX0rBuLonUYURcNJb42Vq2kWML0LKoqPlGqUAx_Bbx5a0YWKIx3Zll0cqB8sqQV8hGDxZUWrm9FHAYnz25BZYpUIhLtMpZYEZ7qbolmLQIusyxZS3ab6nbR0omQXYdPSusnT8z37J66lLt99Pmhab-2drQK"/>
+</div>
+<h1 class="text-xl font-bold text-[#0c5252] dark:text-[#b8edb3] tracking-tight">Kindred Hearth</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-8 pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Panel: Chat List -->
+<div class="lg:col-span-5 xl:col-span-4 space-y-6">
+<div class="flex flex-col gap-2">
+<span class="font-label text-[11px] font-medium tracking-wide uppercase text-primary">Secure Channel</span>
+<h2 class="text-3xl font-headline font-extrabold tracking-tight text-on-surface">Messages</h2>
+</div>
+<!-- Search & Filters -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary text-sm placeholder:text-outline-variant" placeholder="Search conversations..." type="text"/>
+</div>
+<!-- Active Status Ribbon -->
+<div class="flex gap-4 overflow-x-auto hide-scrollbar py-2">
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="relative">
+<div class="w-14 h-14 rounded-full border-2 border-secondary p-0.5">
+<img alt="Dr. Aris" class="w-full h-full rounded-full object-cover" data-alt="headshot of a middle-aged man with graying hair, friendly face, outdoors in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-BWM0aKppvab27LDDNvVahisjdiJz2uYDNvLpc2z28wBl2JRynT3dVUO1qbA7lW260Iv0mDrUCe_5nJdCAGhhyMA3W_97xwRHPk45W7BFZIexju77lOfsiJCqkPo_xbj_CM154VY_XZeiKiSsk0zYFVt1ht8vherUNSAZbF2X4n1GpaaxYgaeVOKYxkH0leM7gXvFePiKF9vFrW8ExBgYuK54_Doh0DlXckBArDo0jDIstqR8XanFi53krHDty_ew08ToRJBCzRGV"/>
+</div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-secondary border-2 border-background rounded-full"></div>
+</div>
+<span class="text-[10px] font-semibold text-on-surface-variant truncate w-full text-center">Dr. Aris</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="relative">
+<div class="w-14 h-14 rounded-full p-0.5">
+<img alt="Nurse Sarah" class="w-full h-full rounded-full object-cover" data-alt="professional woman in business attire, smiling warmly against a blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6lafANc21yDiGgf6IHxK7y2Qhoks_h1tDqcB_LbH5Hu7Sede3SXOdzi7jPRYvjb8YrYmfCAptAMiRXmTLdMhZ_U2kozcFN6Em5NY4L4jyOzMXPgsrDVlyd9j2CFDlEQxhWXA6hks4sRhdIJ6Senfw_QFNzlXmpxu6lElt5RTelIVF2xhW_LNM0pMmEXR0ZJgIS312NHVNFBWPPuDKnN1KuV2mmOwuk4SHJgDmOMncXZNZyhl4pT5X367sQuDJqha_6aDVx0P70xjx"/>
+</div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-secondary border-2 border-background rounded-full"></div>
+</div>
+<span class="text-[10px] font-semibold text-on-surface-variant truncate w-full text-center">Sarah (RN)</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="relative">
+<div class="w-14 h-14 rounded-full p-0.5 opacity-60">
+<img alt="Mark Family" class="w-full h-full rounded-full object-cover" data-alt="young man with short beard, thoughtful expression, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkOEfrieioIrQqYB5xnpUM8I6YOpkpPJomY1rvPYhSsySXHuMW1hWtFlM5P0ge3k701WWwqTqXgyX8-bb7wPmKaJoTfV5azqxKvb5QBs6oeHRcsxWfx47FYMlbNg8Fw718mI0SqT1e6d7Nk_nMeE0ZGR_Q04WrgHbLpMef7GuVSzALxTRuf26DTWbkALSm52fTbjt1B6nL458j0mZE2ZDxfFzhhS9kA3Kotr44jW2Z_GRVQTBI5oED_0sE1AYqCB94UZu_muuMLDqe"/>
+</div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-outline-variant border-2 border-background rounded-full"></div>
+</div>
+<span class="text-[10px] font-semibold text-on-surface-variant truncate w-full text-center">Mark</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="text-[10px] font-semibold text-on-surface-variant">New Group</span>
+</div>
+</div>
+<!-- Chat List Items -->
+<div class="space-y-2">
+<!-- Active Chat -->
+<div class="p-4 bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(28,28,25,0.06)] border-l-4 border-primary flex gap-4 items-center">
+<div class="relative shrink-0">
+<img alt="Nurse Sarah" class="w-12 h-12 rounded-full object-cover" data-alt="professional nurse smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiUQir1CtcfQrwAVNRDKjUZcLP0DxZgA38ABzM02IFsp-d4d1KMD5WBTpT5PGUbOCaKzzbT3xnnojU-kHbFcJjp63JUsCMEU4xBoeBvF2qpBlyrj4vQvZje7DDYaYr85YXm_rB9U0Gdamguf1MLMKaR-cf_M18vm9e3-xmyKIbC4kTtNl710J6W4z8okPkXFAuLea4O9oJF2m3_oDEAdW_pPS2hNjb8USMyuUHbBoYxBjobnlNLkZa2lAUNsPNf-b_Q_6AFbjM8ph6"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-secondary border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface truncate">Sarah Wilson, RN</h3>
+<span class="text-[10px] font-medium text-primary">2:14 PM</span>
+</div>
+<p class="text-sm text-on-surface font-semibold truncate">The physical therapy session went well...</p>
+</div>
+<div class="w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+<!-- Inactive Chats -->
+<div class="p-4 bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-xl flex gap-4 items-center">
+<div class="shrink-0">
+<img alt="Dr. Aris" class="w-12 h-12 rounded-full object-cover" data-alt="friendly doctor in consultation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArLDyND6tdm_Zco7bxwaUUE2_cMvTHx5g2awqlhZmT1P63iJjXNMrsIGQFfyExgw4fb-DxnfHC89iEHv5VpWZ9gRZPKcsC6CF4wZwPfQ-V2aLsbRHdAlIscisWCYoWYE-VDi3tRrEGFNYh3wdSgE-BeH8X7vHxz2D4lQif55JRfREVrx5zHE9xbH9DiU3t72D79IKKw2t_gof4Atzz8uUE94iuIK_vmQ0UwXfsBOmfbjyErNFCWPidiphKfRdP0LpQheJKqzBZ9Yq8"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface-variant truncate">Dr. Aris Thorne</h3>
+<span class="text-[10px] font-medium text-outline">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">I've reviewed the latest blood work results.</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-xl flex gap-4 items-center">
+<div class="shrink-0 relative">
+<div class="flex -space-x-4">
+<img alt="Mark" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="family member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtoqwHW0HLyAAyn5JJ5XuoV_fxkhCXrYLVShaEQfoWyyqoSTqHCiAlFV4_kCrPuyrE_p1FzKOnFCIbLUbjr2QP9_sZ0mNWFmBCslSy8V7ZDnlwbykzezTDvBoz7dyKRLKT8NZq3Xji0rpMX0XPLwI-WxYALlwX7RW-SeTGT5XBTKyF5f3nfzIPLwEHc5BE3s_0tPYcC6UPY7BssN6oaNCo7rcYiqwaB9k8uvnSqJz5QdcemzhLgb2eTXeWMLHxwGgnDtzmhF7ppgYa"/>
+<img alt="Jane" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="family member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaeRgwzCg4CzSinTIq7R6bgZkefTwZcBJcH3CBeoNOmSEkbb7kN7FIhv2xNXxX25NTbR7yxEbN9szDB4HLgauPlXkUmxZCni2WyOvBLgi1bxOoY5ydEMqkbl0RVYkdktJ28p0f0tnngvJqH0SPRENx2dciiQ5y9vA3Cn-O70PiCLvICd1g0A5Xz0cf8tpEPnVWRAJfdu_ImR1f492B6QNkQvoAZCbsFn7mOjEYvBsjtBpOd5YaU_VdxPggUm-TE6aTQk5WPWWFmk4_"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface-variant truncate">Family Group</h3>
+<span class="text-[10px] font-medium text-outline">Mar 12</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">Mark: Mom's feeling much better today!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Active Conversation (Bento Style) -->
+<div class="lg:col-span-7 xl:col-span-8 space-y-6">
+<!-- Chat Header -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden">
+<img alt="Sarah RN" class="w-full h-full object-cover" data-alt="portrait of a professional nurse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3A6CDsbd0wK4ptALVQWn9os7YbjdSVcfkrVs0al8oMynjnYQrZIlX4WnZAcU50_rAG6_4m-8gAcd6PMBSU-LABGSy0R0vjNmAaQFsQk-IIlFW7mdQImfstbP60P0SLb5mUbcgFpaAVGjL9s7BDh1u5Osi6RnM6QosAh9H4V8hvWn6_4UhrFQNRW2Gn-aZj1Yq4CxAblEzAI4BEqsP0Zotq3bkRrRnsCDvIrGWhzp7kHRdDZOh5N3eQ_DqMqXHSHrQUk7xfBBuY2vY"/>
+</div>
+<div>
+<h2 class="text-lg font-headline font-bold text-on-surface">Sarah Wilson, RN</h2>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<span class="text-xs text-on-surface-variant">Active now • Clinical Coordinator</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary hover:bg-surface-container-high">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary hover:bg-surface-container-high">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+<!-- Messages Canvas (Bento Layout Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[500px] overflow-y-auto hide-scrollbar p-1">
+<!-- Clinical Update Card (Large) -->
+<div class="md:col-span-2 bg-surface-container-lowest p-6 rounded-lg border-l-8 border-tertiary shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm">medical_services</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-wider">Clinical Update • Today 11:30 AM</span>
+</div>
+<p class="text-on-surface leading-relaxed">
+                            "Hello! I just finished the morning assessment. Blood pressure is stable at 128/82. Oxygen levels look great (98%). We've adjusted the hydration schedule slightly for the afternoon warmth."
+                        </p>
+<div class="flex gap-2 mt-2">
+<div class="px-3 py-1.5 bg-surface-container-low rounded-full text-xs font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">check_circle</span> Vitals Logged
+                            </div>
+<div class="px-3 py-1.5 bg-surface-container-low rounded-full text-xs font-semibold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span> Next Check: 4PM
+                            </div>
+</div>
+</div>
+<!-- Photo Update (Small) -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-sm space-y-3">
+<img alt="Meal" class="w-full h-40 object-cover rounded-md" data-alt="close-up of a nutritious healthy meal with fresh vegetables and lean protein on a ceramic plate, soft window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzttLOX4BCick0xeAywXVA7alxvSp3-mU1lIZkW-UnsOtEXZUTsbAfpje8W5RB2jZ_kA_6wm6mTa8T-VwPEBgmCpttemBGKj6FWDUlI1BpfoJys-xLXatVpMhGhEhpz3x2foHH_uKpUM_M3YjtIbnNWknU__M1TZTNnH8WICqrH3M9OlWomTion44_YPVx_1ZBQWsI6XDHgayIPpebU1D1UmqhGn0OTvoBIg11GytsWB-wFzjiuW5de4R9W8Ik5uY7eUnMvq8irpFZ"/>
+<div>
+<p class="text-xs text-on-surface-variant">Lunch today: Grilled salmon with steam broccoli. Full appetite today!</p>
+<span class="text-[10px] text-outline mt-1 block">12:45 PM</span>
+</div>
+</div>
+<!-- Voice Note (Small) -->
+<div class="bg-primary text-white p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label text-[10px] uppercase font-bold">Voice Memo</span>
+</div>
+<div class="flex items-center gap-3 bg-primary-container/30 rounded-full px-4 py-2">
+<span class="material-symbols-outlined">play_arrow</span>
+<div class="flex-1 h-1 bg-white/30 rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-1/3 bg-white rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold">0:42</span>
+</div>
+<span class="text-[10px] opacity-70 mt-4 text-right">Sarah Wilson • 1:15 PM</span>
+</div>
+<!-- User Reply (Small/Full) -->
+<div class="md:col-span-2 flex justify-end">
+<div class="bg-secondary-container text-on-secondary-container p-6 rounded-lg max-w-[80%] rounded-tr-none">
+<p class="text-sm font-medium">Thank you so much Sarah! That vital update gives us a lot of peace of mind. Will the nutritionist be stopping by later as well?</p>
+<span class="text-[10px] opacity-70 mt-2 block text-right">Read • 2:14 PM</span>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-end gap-4 shadow-md">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<div class="flex-1 bg-surface-container-high rounded-xl p-3">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm resize-none py-1" placeholder="Type a secure message..." rows="1"></textarea>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md rounded-t-[3rem] shadow-[0_-20px_40px_rgba(28,28,25,0.06)] background-shift-from-surface">
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-colors tap-highlight-none" href="#">
+<span class="material-symbols-outlined">home_health</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#0c5252] text-white rounded-full p-3 transition-all scale-110 -translate-y-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-colors tap-highlight-none" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-colors tap-highlight-none" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Community</span>
+</a>
+</nav>
+</body></html>

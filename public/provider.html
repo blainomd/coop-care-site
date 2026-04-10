@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002105",
+                    "on-tertiary-container": "#ffd4b2",
+                    "secondary-container": "#b8edb3",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f0ede8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#3e6d3e",
+                    "primary-container": "#2d6a6a",
+                    "secondary-fixed-dim": "#9fd49b",
+                    "secondary": "#39693b",
+                    "on-tertiary-fixed": "#2e1500",
+                    "tertiary": "#6a3f13",
+                    "outline": "#707978",
+                    "surface-dim": "#dcdad5",
+                    "outline-variant": "#bfc8c8",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#2a6767",
+                    "inverse-surface": "#31302d",
+                    "surface-variant": "#e5e2dd",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#074f4f",
+                    "on-background": "#1c1c19",
+                    "primary-fixed": "#b1eeed",
+                    "primary": "#0c5252",
+                    "on-secondary-fixed-variant": "#215025",
+                    "inverse-primary": "#95d1d1",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#ffdcc1",
+                    "tertiary-fixed-dim": "#f8ba83",
+                    "on-surface": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-primary-container": "#abe8e7",
+                    "tertiary-container": "#865629",
+                    "on-surface-variant": "#3f4848",
+                    "surface-container-highest": "#e5e2dd",
+                    "on-error": "#ffffff",
+                    "background": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#673d11",
+                    "primary-fixed-dim": "#95d1d1",
+                    "surface-bright": "#fcf9f4",
+                    "secondary-fixed": "#baf0b6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002020",
+                    "surface-container-high": "#ebe8e3",
+                    "surface": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(252, 249, 244, 0) 0%, rgba(252, 249, 244, 0.4) 60%, rgba(252, 249, 244, 1) 95%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- Top AppBar -->
+<header class="bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#0c5252] dark:text-[#b8edb3] hover:opacity-80 transition-opacity active:scale-95 duration-200">arrow_back</button>
+<span class="font-headline font-extrabold text-xl tracking-tight text-[#0c5252] dark:text-[#b8edb3]">co-op.care</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-[#0c5252] dark:text-[#b8edb3]">share</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant/30">
+<img alt="User profile" data-alt="Close up portrait of a friendly smiling middle aged man with kind eyes and neat hair in a bright indoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAXXVGwcPyvlSLWd2zXEAYC2ZSqD8wf3wbBxaF9HK5co5iIUB6qUhZiHr021G2sQ34-QHeWGGvkiuD4vL5XTV-5K1jo3mcAAmy1iku-FS8MnYaPM_mlvIjLmqM-Ohd9Z4xrNr1c4XZxcI2Pffiq01JlL5u1rjQjz-lcHuM_O3JBLeWCv3ZYRLKCTiZzc-gUdA7xR2uzPOXKSdPg4ofCa24kjTo1qpPpdavByo4e-xC-NdLsw56vnzkm8vUDgqmn0x0W4M0QFZF0oj3"/>
+</div>
+</div>
+</header>
+<main class="pt-0 pb-32">
+<!-- Immersive Hero Section -->
+<section class="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+<img class="w-full h-full object-cover object-center scale-105" data-alt="Candid portrait of a warm, professional caregiver in her 30s standing in a sun-drenched modern living room environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASoSCF1lsi7znBEipfyJEYtuGmnFruicRAIG8hGIWUCzFj7Do_oCtd6kCnIDeYzA_b1biGM97leEO6b5KjIYbNrmmi8QvEqx4RGl207Sl45t1N1xB60k9QBdCy_ZqbNyFVqIQUGIhK7pXbnTeMKyLp-Vd1kpN6Fkgj_y2qJ9wNuhh7STYpe57pEham1583-1mf3PRs_fMNPnHD9JYy_YqK-GAQuV1hZzCWHt5GYK3mGlLNgdQUf2ZxgKJnUvGoFKFSBAkW-zMqDSyT"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full max-w-7xl mx-auto md:left-1/2 md:-translate-x-1/2">
+<div class="space-y-4 max-w-2xl">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container/90 backdrop-blur text-on-secondary-container text-xs font-extrabold tracking-[0.1em] uppercase rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    Top Rated Provider
+                </span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1]">Elena<br/>Rodriguez</h1>
+<p class="font-label text-primary font-bold flex items-center gap-2 text-lg">
+                    Specialized Pediatric &amp; Elderly Care • 12 years exp.
+                </p>
+</div>
+</div>
+</section>
+<div class="px-6 space-y-16 max-w-7xl mx-auto -mt-8 relative z-10">
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Bio & Experience -->
+<div class="lg:col-span-7 space-y-16">
+<!-- Bio Section -->
+<div class="bg-white/50 backdrop-blur-sm p-8 md:p-10 rounded-xl border border-white/50 shadow-sm">
+<span class="font-label text-primary text-xs font-extrabold uppercase tracking-[0.2em] mb-6 block">About Me</span>
+<p class="text-xl md:text-2xl leading-relaxed text-on-surface-variant font-light italic">
+                        "My journey in caregiving began with a deep-seated belief that every individual deserves to age and heal with dignity in their own sanctuary."
+                    </p>
+<p class="mt-6 text-lg text-on-surface-variant/80 font-light leading-relaxed">
+                        I specialize in creating empathetic environments where physical assistance is paired with genuine companionship. My approach combines clinical precision with a gentle, human touch.
+                    </p>
+</div>
+<!-- Experience Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl border-t-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-6">clinical_notes</span>
+<h3 class="font-headline font-bold text-xl mb-3">Clinical Background</h3>
+<p class="text-on-surface-variant leading-relaxed">6 years as a Registered Nurse in geriatric acute care settings, specializing in recovery protocols.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-t-4 border-secondary shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-3xl mb-6">psychology</span>
+<h3 class="font-headline font-bold text-xl mb-3">Memory Support</h3>
+<p class="text-on-surface-variant leading-relaxed">Certified Alzheimer's care provider with emphasis on cognitive stimulation therapy and patient safety.</p>
+</div>
+</div>
+<!-- Credentials -->
+<div>
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+                        Credentials <span class="h-[1px] flex-grow bg-outline-variant/30"></span>
+</h2>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-sm border border-surface-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-semibold text-on-surface">RN Licensed</span>
+</div>
+<div class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-sm border border-surface-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-semibold text-on-surface">CPR Certified</span>
+</div>
+<div class="flex items-center gap-3 px-6 py-3 bg-white rounded-full shadow-sm border border-surface-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-semibold text-on-surface">Background Cleared</span>
+</div>
+</div>
+</div>
+<!-- Refined Testimonials -->
+<div>
+<h2 class="font-headline text-2xl font-bold mb-8">Family Voices</h2>
+<div class="space-y-8">
+<div class="bg-surface-container-lowest p-10 rounded-2xl relative border border-outline-variant/10 shadow-sm">
+<div class="absolute -top-6 left-10">
+<span class="material-symbols-outlined text-6xl text-primary/10 select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary text-xl">SJ</div>
+<div>
+<p class="font-bold text-on-surface text-lg">The Jenkins Family</p>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-xl italic font-light leading-relaxed">
+                                "Elena transformed my father's daily routine. Her patience with his dementia is superhuman. She isn't just a caregiver; she's truly become part of our family."
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Rates & Connect -->
+<div class="lg:col-span-5 space-y-8">
+<div class="sticky top-24 space-y-8">
+<!-- Care Card: Interactive Packages -->
+<div class="bg-white p-8 md:p-10 rounded-xl shadow-[0_32px_64px_-12px_rgba(28,28,25,0.08)] border border-outline-variant/20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<h3 class="font-headline text-2xl font-bold mb-8">Care Packages</h3>
+<div class="space-y-4">
+<button class="w-full text-left flex justify-between items-center p-5 bg-surface-container-low rounded-xl border-2 border-transparent hover:border-primary/30 transition-all group active:scale-[0.98]">
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Companion Care</p>
+<p class="text-xs text-on-surface-variant mt-1">Social interaction &amp; basic help</p>
+</div>
+<div class="text-right">
+<span class="block font-headline font-extrabold text-primary text-xl">$35/hr</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant tracking-wider">Select</span>
+</div>
+</button>
+<button class="w-full text-left flex justify-between items-center p-5 bg-primary-container/10 rounded-xl border-2 border-primary/50 transition-all group active:scale-[0.98] ring-4 ring-primary/5">
+<div>
+<div class="flex items-center gap-2">
+<p class="font-bold text-on-surface">Medical Assistance</p>
+<span class="px-2 py-0.5 bg-primary text-white text-[9px] font-bold rounded uppercase tracking-wider">Popular</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Medication &amp; vitals monitoring</p>
+</div>
+<div class="text-right">
+<span class="block font-headline font-extrabold text-primary text-xl">$48/hr</span>
+<span class="text-[10px] uppercase font-bold text-primary tracking-wider">Selected</span>
+</div>
+</button>
+<button class="w-full text-left flex justify-between items-center p-5 bg-surface-container-low rounded-xl border-2 border-transparent hover:border-primary/30 transition-all group active:scale-[0.98]">
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Overnight Support</p>
+<p class="text-xs text-on-surface-variant mt-1">8-hour dedicated vigil</p>
+</div>
+<div class="text-right">
+<span class="block font-headline font-extrabold text-primary text-xl">$320/ea</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant tracking-wider">Select</span>
+</div>
+</button>
+</div>
+<!-- Availability Calendar (Compact) -->
+<div class="mt-10 pt-8 border-t border-outline-variant/20">
+<h4 class="font-headline font-bold text-xs uppercase tracking-widest text-outline mb-6">Current Availability</h4>
+<div class="grid grid-cols-7 gap-3">
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">M</span>
+<div class="w-full aspect-square bg-secondary rounded-lg shadow-sm"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">T</span>
+<div class="w-full aspect-square bg-secondary rounded-lg shadow-sm"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">W</span>
+<div class="w-full aspect-square bg-secondary rounded-lg shadow-sm"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">T</span>
+<div class="w-full aspect-square bg-surface-container-high rounded-lg"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">F</span>
+<div class="w-full aspect-square bg-secondary rounded-lg shadow-sm"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">S</span>
+<div class="w-full aspect-square bg-surface-container-high rounded-lg"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold text-outline-variant mb-2">S</span>
+<div class="w-full aspect-square bg-surface-container-high rounded-lg"></div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4">
+<p class="text-[11px] text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full"></span> Available
+                                </p>
+<button class="text-primary text-[11px] font-bold uppercase tracking-wider hover:underline">View Full Schedule</button>
+</div>
+</div>
+<!-- Highly Visible Action -->
+<div class="mt-10">
+<button class="w-full py-5 px-8 bg-primary text-white font-headline font-extrabold text-xl rounded-full shadow-[0_20px_40px_-8px_rgba(12,82,82,0.4)] flex items-center justify-center gap-3 active:scale-[0.97] transition-all hover:bg-primary-container hover:shadow-[0_24px_48px_-8px_rgba(12,82,82,0.5)]">
+                                Connect with Elena
+                                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant mt-4 font-medium">Response time: Usually within 2 hours</p>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-xl text-center">
+<p class="text-2xl font-black text-primary">120+</p>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Happy Families</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl text-center">
+<p class="text-2xl font-black text-secondary">4.9/5</p>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Rating</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only UX) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-stone-950/90 backdrop-blur-xl rounded-t-[2.5rem] z-50 shadow-[0_-15px_30px_rgba(0,0,0,0.05)] border-t border-outline-variant/10">
+<div class="flex flex-col items-center justify-center text-outline py-2 px-5 hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="font-headline text-[10px] font-bold tracking-wider uppercase mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary text-white rounded-full py-2 px-5 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">search</span>
+<span class="font-headline text-[10px] font-bold tracking-wider uppercase mt-1">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline py-2 px-5 hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">group</span>
+<span class="font-headline text-[10px] font-bold tracking-wider uppercase mt-1">Circle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline py-2 px-5 hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-headline text-[10px] font-bold tracking-wider uppercase mt-1">Messages</span>
+</div>
+</nav>
+</body></html>

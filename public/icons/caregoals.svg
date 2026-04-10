@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#000000"/>
+  <defs>
+    <clipPath id="heartMask">
+      <path d="M 200 134
+               A 66 66 0 0 0 68 134
+               C 68 210, 150 270, 200 340
+               C 250 270, 332 210, 332 134
+               A 66 66 0 0 0 200 134 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#heartMask)">
+    <circle cx="286" cy="134" r="275" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="231" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="187" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="143" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="99" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="55" fill="none" stroke="#ffffff" stroke-width="22"/>
+    <circle cx="286" cy="134" r="22" fill="#ffffff"/>
+  </g>
+</svg>

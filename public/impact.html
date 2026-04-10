@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provider Impact &amp; Earnings | Kindred Hearth</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#baf0b6",
+                        "surface-dim": "#dcdad5",
+                        "on-surface": "#1c1c19",
+                        "on-primary-fixed": "#002020",
+                        "on-primary-container": "#abe8e7",
+                        "on-secondary-container": "#3e6d3e",
+                        "on-secondary-fixed-variant": "#215025",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline-variant": "#bfc8c8",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "on-error-container": "#93000a",
+                        "outline": "#707978",
+                        "background": "#fcf9f4",
+                        "surface-tint": "#2a6767",
+                        "primary-fixed-dim": "#95d1d1",
+                        "on-tertiary-fixed-variant": "#673d11",
+                        "tertiary-fixed": "#ffdcc1",
+                        "surface-variant": "#e5e2dd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#f8ba83",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#39693b",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary": "#6a3f13",
+                        "surface-container-high": "#ebe8e3",
+                        "primary": "#0c5252",
+                        "on-primary-fixed-variant": "#074f4f",
+                        "primary-fixed": "#b1eeed",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffd4b2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#9fd49b",
+                        "inverse-primary": "#95d1d1",
+                        "surface-bright": "#fcf9f4",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-container": "#b8edb3",
+                        "on-surface-variant": "#3f4848",
+                        "surface": "#fcf9f4",
+                        "inverse-surface": "#31302d",
+                        "primary-container": "#2d6a6a",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0ede8",
+                        "on-secondary-fixed": "#002105",
+                        "tertiary-container": "#865629",
+                        "on-background": "#1c1c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md sticky top-0 z-50 w-full">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a kind female caregiver with a warm smile in a clean modern setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi1KcKWdst5-S92rgT_qqTK_tFgvlbz3aKVi1k-vRgXQQ82BXYdFqytMNAriOUIoj0JFSNJvWf1qIun1LHOdf293Z7Yss6hrOzMjSMExkJFVyXjYtc7RkAgefWgefTzcUbxPqleshuqCOYsTIYSvgwwpp5Z09Ph2oE0bZNLTwCT0Zwd1UX9P20HJeksseJoevZxQca34q9r5Q2ELZnxqVW-UPP7L3bcEY_8VbplRC0C06kkR8aB6rB2-5xo-tXF7imMGjqj4bxrnQA"/>
+</div>
+<span class="text-xl font-bold text-[#0c5252] dark:text-[#b8edb3] tracking-tight brand-font">Kindred Hearth</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#0c5252]/70 font-medium hover:opacity-80 transition-opacity" href="#">Feed</a>
+<a class="text-[#0c5252]/70 font-medium hover:opacity-80 transition-opacity" href="#">Messages</a>
+<a class="text-[#0c5252] font-bold transition-opacity" href="#">Insights</a>
+<a class="text-[#0c5252]/70 font-medium hover:opacity-80 transition-opacity" href="#">Community</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#0c5252] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Hero Section -->
+<div class="mb-12">
+<p class="text-primary font-semibold uppercase tracking-widest text-[11px] mb-2 font-label">Your Monthly Overview</p>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">Financial &amp; Social Impact</h1>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Total Earnings Card -->
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-on-primary shadow-[0_20px_40px_rgba(12,82,82,0.12)] flex flex-col justify-between min-h-[240px]">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-white/70 uppercase tracking-wider text-xs font-medium">Earnings This Month</p>
+<h2 class="text-6xl font-extrabold mt-2 tracking-tighter">$4,850.00</h2>
+</div>
+<span class="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">+12% vs last month</span>
+</div>
+<div class="flex gap-4 items-end">
+<div class="flex-1">
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[75%] rounded-full"></div>
+</div>
+<p class="text-[10px] mt-2 text-white/60">Goal: $6,500.00</p>
+</div>
+<button class="bg-white text-primary px-6 py-3 rounded-full font-bold text-sm hover:scale-95 transition-transform active:scale-90">Withdraw Funds</button>
+</div>
+</div>
+<!-- Stats Column -->
+<div class="flex flex-col gap-6">
+<!-- Hours Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label text-on-surface-variant uppercase tracking-wider text-[10px] font-bold">Total Hours</p>
+<p class="text-3xl font-extrabold text-primary mt-1">142h</p>
+</div>
+<div class="p-3 bg-primary-fixed rounded-full">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+</div>
+<!-- Rating Card -->
+<div class="bg-secondary-container p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label text-on-secondary-container uppercase tracking-wider text-[10px] font-bold">Community Rating</p>
+<div class="flex items-center gap-1 mt-1">
+<p class="text-3xl font-extrabold text-on-secondary-container">4.9</p>
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="p-3 bg-white/40 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Impact Graph & Feedback Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+<!-- Impact Graph Section -->
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(28,28,25,0.04)] h-full">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-2xl font-bold text-on-surface">Community Impact Score</h3>
+<p class="text-on-surface-variant text-sm">Measuring family satisfaction and wellness outcomes.</p>
+</div>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-primary mt-1"></span>
+<span class="text-xs font-bold font-label uppercase">High Impact</span>
+</div>
+</div>
+<!-- Simplified Visual Graph Placeholder -->
+<div class="relative h-64 w-full flex items-end gap-2 px-2">
+<!-- Monday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">85</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 60%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">MON</p>
+</div>
+<!-- Tuesday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">92</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 75%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">TUE</p>
+</div>
+<!-- Wednesday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">78</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 50%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">WED</p>
+</div>
+<!-- Thursday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">98</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 95%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">THU</p>
+</div>
+<!-- Friday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">88</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 70%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">FRI</p>
+</div>
+<!-- Saturday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">94</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 85%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">SAT</p>
+</div>
+<!-- Sunday -->
+<div class="flex-1 group relative">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">91</div>
+<div class="bg-primary-fixed-dim w-full rounded-t-lg transition-all hover:bg-primary" style="height: 80%"></div>
+<p class="text-[10px] font-bold text-center mt-3 text-on-surface-variant font-label">SUN</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Section -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-primary">Top Feedback</h3>
+<button class="text-sm font-bold text-primary hover:underline">See All</button>
+</div>
+<!-- Feedback Card 1 -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-4xl">format_quote</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait of an older woman with a friendly face, representative of a client's family member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPU-OD-Rs41f3XBqqK0g5aJC6Oo9CE5Nw6ApK32bggE7MvS5T6mXo_OcJKmGJzuxhzKqF5DNMj21mFCXESotrKbJ22JUiKv5Rg4_9foNDoc-K-D4AgI6jkLF7KCqIspfxikrlbyO7MLOG0DGP8d_yixqgoXQigncyMf19pBAmxJBqX4-9kEXqRhFMaBjG8ygMiYHIxSnu1jpYfLIF_poO2LzjSLgVzl8hhZqfMYHqjDuMF7U0gi2_k1qdqQLBFULcnYSMU3Ygpj75U"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">The Henderson Family</p>
+<p class="text-[10px] text-on-surface-variant font-label uppercase">Last Week</p>
+</div>
+</div>
+<p class="text-on-surface font-body text-sm leading-relaxed italic">"Sarah has been a blessing to our father. Her patience and deep empathy are rare qualities. We are so grateful for her care."</p>
+</div>
+<!-- Feedback Card 2 -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group border-l-4 border-tertiary-fixed">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young father with a warm expression, looking into the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNOeHszBCyzIMxbgkm6BHmfW4ArdpQKa-9n1TEoYv0dRZZPVhx32FxdrWFPI5q9Pe6H2q52T88wOHVgUZnoylr7GWEzcAk2fjz4FuxE-gFhkLOwmu9-cZ1JuGth93la29vvTK0KTP3DmNIPTkeB_IorD27E_JDy8qXZPHkcFtJhSpV8EtGR1-Mg0uGyPIlps4XuV1HX9ZEWO_CCL1-dzJpOY8NMDO55Gm6hG_nKiCVD8wdizvmrQaI2hJ1OgVkKz9lA5v6YwYnQwnj"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant font-label uppercase">2 Days Ago</p>
+</div>
+</div>
+<p class="text-on-surface font-body text-sm leading-relaxed italic">"Extremely professional and punctual. Sarah's medical knowledge really helped put us at ease during the transition period."</p>
+</div>
+</div>
+</div>
+<!-- Career Milestone / Tips -->
+<div class="mt-12 bg-surface-container p-1 rounded-xl">
+<div class="bg-surface-container-lowest p-8 rounded-lg flex flex-col md:flex-row items-center gap-8 border border-outline-variant/30">
+<div class="w-full md:w-1/3 aspect-video rounded-xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Calm interior of a modern wellness center with soft lighting and natural textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLMFUSUeVoucFNk23H0A2iwld-xvo8fn0Qo91yXyqlZUSED4DeQ3NUhnRSdHGvz_WwDFJXK3r3roTHec1tKmCfC8bFI9axcSwBjSEe09JBaCkMtn1HeZV1QapNuX4s44HVKVNGqFxXl8KR5lqUEcxH55MV1KDWI6inlO6N_ZI0v2Qv45upsh-ca1baQZKD0oEfrxS9nf_Nb56bNQPPHO52ynQsQyFNbLR2Jgz4YNWDwIRyDzVqSPVna8CrIFSsFywXTywhOGdLZ5ia"/>
+</div>
+<div class="flex-1">
+<h4 class="text-2xl font-bold text-primary mb-3">Maximize Your Rewards</h4>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">You are only 12 hours away from the 'Platinum Caregiver' tier. This tier unlocks an extra 5% bonus on all weekend shifts and access to exclusive professional development workshops.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold text-sm hover:scale-95 transition-transform">Browse Workshops</button>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-bold text-sm hover:scale-95 transition-transform">View Tiers</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md shadow-[0_-20px_40px_rgba(28,28,25,0.06)] rounded-t-[3rem] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home_health</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#0c5252] text-white rounded-full p-3 transition-all scale-110 -translate-y-2" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0c5252]/60 dark:text-stone-400 p-3 hover:text-[#0c5252] dark:hover:text-[#b8edb3] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Community</span>
+</a>
+</nav>
+</body></html>

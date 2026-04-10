@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>co-op.care | Care Circle Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002105",
+                    "on-tertiary-container": "#ffd4b2",
+                    "secondary-container": "#b8edb3",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f0ede8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#3e6d3e",
+                    "primary-container": "#2d6a6a",
+                    "secondary-fixed-dim": "#9fd49b",
+                    "secondary": "#39693b",
+                    "on-tertiary-fixed": "#2e1500",
+                    "tertiary": "#6a3f13",
+                    "outline": "#707978",
+                    "surface-dim": "#dcdad5",
+                    "outline-variant": "#bfc8c8",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#2a6767",
+                    "inverse-surface": "#31302d",
+                    "surface-variant": "#e5e2dd",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#074f4f",
+                    "on-background": "#1c1c19",
+                    "primary-fixed": "#b1eeed",
+                    "primary": "#0c5252",
+                    "on-secondary-fixed-variant": "#215025",
+                    "inverse-primary": "#95d1d1",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#ffdcc1",
+                    "tertiary-fixed-dim": "#f8ba83",
+                    "on-surface": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-primary-container": "#abe8e7",
+                    "tertiary-container": "#865629",
+                    "on-surface-variant": "#3f4848",
+                    "surface-container-highest": "#e5e2dd",
+                    "on-error": "#ffffff",
+                    "background": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#673d11",
+                    "primary-fixed-dim": "#95d1d1",
+                    "surface-bright": "#fcf9f4",
+                    "secondary-fixed": "#baf0b6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002020",
+                    "surface-container-high": "#ebe8e3",
+                    "surface": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+        .schedule-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .schedule-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f4]/60 dark:bg-stone-950/60 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full border-b border-surface-container">
+<div class="flex items-center gap-4">
+<button class="text-[#0c5252] dark:text-[#b8edb3] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-xl font-bold tracking-tight text-[#0c5252] dark:text-[#b8edb3] font-['Plus_Jakarta_Sans']">co-op.care</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-primary overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a kind-faced woman with warm lighting and a soft natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeDnYBWHfADICKqTVUaNS0a929etq7viyndjIe6Pg_E_Sx9MEPaQHJxShA_5yB6Z-dy_0KzQR5svP1OB7voRIDfB5a2rpLK-TjoHEjqSxfQCsvHmM4g3Y7-CE_kNTRVOa6aRcuiwia5eHOBlK0V3l1CPkSjj4cpJGaVY0eaMKjJQXRSfkjgypKRyLJSip4pHpiD8a2Q-mvtCHhbF5B5GVHyjh01czqfGYSWueHZwL_wZ15egpgGSx-XFYXa1-3AYAMoP4QOQCTZgkq"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-12">
+<!-- Hero / Emotional Anchor Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold tracking-wider text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Active Circle
+            </div>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface leading-tight">Supporting Sarah, <br/><span class="text-primary italic">Together.</span></h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">3 care circle members are active today. The environment is calm and schedules are on track.</p>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="chat_bubble">chat_bubble</span>
+                    Message Circle
+                </button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-surface-container-highest transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+                    Log Update
+                </button>
+</div>
+</div>
+<div class="relative h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+<img alt="Family Care" class="w-full h-full object-cover" data-alt="Gentle moment of two people holding hands in a sunlit living room with plants and warm decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_EI_IMmaoDsKQWILYCVvKbuCLwfws7ZHob96fhaHBTqNkcrdrr9eZ5W0zBIWCTv6GLTM1wcwci5AmXwtj0YVjZjLrxJAYw8jNzKbVtSiG3rWYS21a-4wopoVi5HmFQ2-WKl70YYeJuXYvIjiCJF6oJb0RRHyPnLcLp3LlHfJP8sj0B0X7gALIRM-NnZ4TqRg2xkP-sCleS_2Flt13tDYJV9l7j87NOeSchrFyVi39n3kOc2TQdH4zB3AlrbPTipqVjYZHzntoost"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<div class="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 opacity-80">Circle Lead</div>
+<div class="text-2xl font-bold font-headline">Emma Thompson</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Upcoming Care (Today's Schedule) -->
+<div class="lg:col-span-8 space-y-8">
+<div class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-surface-container">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Today's Schedule</h2>
+<p class="text-on-surface-variant font-medium mt-1">Wednesday, October 24</p>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container/30 px-4 py-2 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-secondary-container text-sm font-bold">3 items remaining</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Care Card 1 -->
+<div class="schedule-card bg-surface-container-low/50 hover:bg-surface-container-low p-6 rounded-[2rem] flex items-center justify-between border border-transparent hover:border-tertiary-fixed transition-all group cursor-pointer">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-tertiary-fixed/40 flex items-center justify-center rounded-2xl text-tertiary shadow-inner">
+<span class="material-symbols-outlined text-2xl" data-icon="medication" style="font-variation-settings: 'FILL' 1;">medication</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Medication</h3>
+<p class="text-on-surface-variant text-sm">Morning dose: BP &amp; Vitamin D</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-sm font-bold text-tertiary bg-tertiary-fixed/30 px-3 py-1 rounded-full">09:45 AM</span>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant group-hover:border-tertiary flex items-center justify-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-tertiary opacity-0 group-active:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+<!-- Care Card 2 -->
+<div class="schedule-card bg-surface-container-low/50 hover:bg-surface-container-low p-6 rounded-[2rem] flex items-center justify-between border border-transparent hover:border-secondary-fixed transition-all group cursor-pointer">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-secondary-fixed/40 flex items-center justify-center rounded-2xl text-secondary shadow-inner">
+<span class="material-symbols-outlined text-2xl" data-icon="nature_people" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Wellness Walk</h3>
+<p class="text-on-surface-variant text-sm">20-min stroll at Sunnyvale</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-sm font-bold text-secondary bg-secondary-fixed/30 px-3 py-1 rounded-full">02:00 PM</span>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant group-hover:border-secondary flex items-center justify-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-secondary opacity-0 group-active:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+<!-- Care Card 3 -->
+<div class="schedule-card bg-surface-container-low/50 hover:bg-surface-container-low p-6 rounded-[2rem] flex items-center justify-between border border-transparent hover:border-primary-fixed transition-all group cursor-pointer">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-primary-fixed/40 flex items-center justify-center rounded-2xl text-primary shadow-inner">
+<span class="material-symbols-outlined text-2xl" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Hydration</h3>
+<p class="text-on-surface-variant text-sm">Target: 500ml water intake</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-sm font-bold text-primary bg-primary-fixed/30 px-3 py-1 rounded-full">Ongoing</span>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant group-hover:border-primary flex items-center justify-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-primary opacity-0 group-active:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-low/40 rounded-[2.5rem] p-8 border border-surface-container">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-bold text-on-surface">Recent Activity</h2>
+<button class="text-primary text-sm font-bold hover:underline">View History</button>
+</div>
+<div class="space-y-8 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-px before:bg-outline-variant/40">
+<div class="relative flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-white border-4 border-surface-container-low z-10 flex items-center justify-center shrink-0 shadow-sm">
+<img alt="Activity User" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a smiling man in casual attire, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH9UYEy0vgQJ-foJxohvozSITpc9NuBLz_cfPnbLtXPxNfYC9ChX6r7RVuoeNRxREnE1gzQrotutzGU4RApgsdHEGQ7ZoZdQAzXI3jitoIAh45ZZpvDlBPAqT0Nu2hHeHksRGNaRx6n49Cjw-yoM_byvTRl7k3jbK9vH2AN9Zp1BUki0XPc7gm82iCLohsjr0QdXha4u4MpJgRtgn_ZLu3M1_w_VV88Zqij03eZLTR5q4uRFaS95yjZ4dRw_ONIf9aCgrBs9rpjKq_"/>
+</div>
+<div class="pt-1">
+<p class="text-on-surface leading-snug">
+<span class="font-bold">David</span> marked <span class="text-primary font-medium italic">"Breakfast Meal"</span> as completed.
+                            </p>
+<span class="text-[11px] text-on-surface-variant font-bold uppercase tracking-wider mt-1 block">8:30 AM Today</span>
+</div>
+</div>
+<div class="relative flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-white border-4 border-surface-container-low z-10 flex items-center justify-center shrink-0 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-lg" data-icon="message">message</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-2xl flex-1 shadow-sm border border-surface-container">
+<p class="text-on-surface italic leading-relaxed">"Sarah was in great spirits this morning. Slept through the night!"</p>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Emma Thompson</span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase">10:15 PM Last Night</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Assets -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Shared Quick Tasks -->
+<div class="bg-white rounded-[2rem] p-8 border border-surface-container shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-xl">Quick Tasks</h3>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="add">add</span>
+</button>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary/20 transition-all cursor-pointer" type="checkbox"/>
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Refill Prescriptions</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary/20 transition-all cursor-pointer" type="checkbox"/>
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Buy more Oat Milk</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<input checked="" class="w-6 h-6 rounded-full border-2 border-outline-variant text-primary focus:ring-primary/20 transition-all cursor-pointer" type="checkbox"/>
+<span class="text-on-surface-variant font-medium line-through">Update Care Log</span>
+</li>
+</ul>
+</div>
+<!-- Health Stat Mini-Card -->
+<div class="bg-primary text-on-primary rounded-[2rem] p-8 relative overflow-hidden shadow-xl shadow-primary/20">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-white/80" data-icon="analytics">analytics</span>
+<h4 class="font-bold text-[10px] uppercase tracking-[0.2em] opacity-80">Insights</h4>
+</div>
+<div class="text-xs font-medium mb-1 opacity-90">Weekly Mood</div>
+<div class="text-4xl font-extrabold mb-3 font-headline">Stable</div>
+<p class="text-xs opacity-75 leading-relaxed">Based on 7 logs from 3 circle members this week.</p>
+</div>
+<span class="material-symbols-outlined absolute -right-6 -bottom-6 text-white/5 text-[12rem]" data-icon="favorite">favorite</span>
+</div>
+<!-- Circle Members -->
+<div class="bg-surface-container-high/40 rounded-[2rem] p-8 border border-surface-container">
+<h3 class="font-bold text-xl mb-6">Care Circle</h3>
+<div class="flex -space-x-3 mb-8">
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm" data-alt="woman headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-u6RPO2l46pGbggFxUCtGxH87z_1yzFJR3Vfg7uS4FsRg0dX32SqGrMyGq9opON2aLexDlCzdgjK43wLOeMripYjCk4PjrAHD-jJ8P8G2frYsM6f-C-et1P_5NSw5jK72H3f5ExVXDZxfpY5L-6dfDaadn-bvnFhlFWzwjqFG6KRSn9udCy6TWIxZIIZK63o9n4MM4R5fESFEsD8v0cXBzzFC-24YlRwLjOZeDNW8NZyEJ2GpZSxXi8RPdKzISbwMYKxw_4MKtgsq"/>
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm" data-alt="man headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMss-fpS4L7o0Jxd8leW62mngeauKWVRX9bFCkojOdM_f1rydh19v2rKyKZ-2kmHWsR3dzTFkCkYl9jazo1SnZLX5aLEywhLKKIjGQajImiSTD9C_3SKw73Y4kRWb5xVFJSuYXfgQlhTK_TxWUbUDdKD-Xtuh8RY03VOHdyZAQ1PfPHkiE_515CCSzQ4Wb5K0GhacMelgYeFEw9OvVgnlnPeuSozYUla_1iEa0MjbzpMlUYGTiD_4Hw4LIsIYvq_jhujM64U1MOcFG"/>
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm" data-alt="woman headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpxLDj35rRl9Df0iqoSCI2j2Sn-m8nJYNwNUsEAarCcGjFwgFU4hceNXoRNLBlHXWfuid7cfMajbPiIYX9nG5xRzBn0f0yhGF0hI1N9uir5oR-BDsr5dzheE3tJg4UlsrFdXN-tEqWaRUw4GvcoMtlLU8RL4ThJOBVD-alDYmNw6zB43Jz966pHGUz-3ptgT087uIITJ693aSYL4MokLsm_rCdTlsfDNBIWZIJZ6bVKuEnjXq85Lyj7L2QHe3Qrvp4rlZbc6FmYPHw"/>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-primary-container text-on-primary-container flex items-center justify-center text-sm font-bold shadow-sm">+2</div>
+</div>
+<button class="w-full py-4 bg-white border border-outline-variant text-on-surface rounded-full font-bold hover:bg-surface transition-all active:scale-95 shadow-sm">
+                    Manage Circle
+                </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl border-t border-surface-container z-50 rounded-t-[2.5rem] shadow-2xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-6 hover:bg-surface-container-low rounded-full transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-headline text-[10px] font-bold tracking-wider mt-0.5">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-6 hover:bg-surface-container-low rounded-full transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="calendar_today">calendar_today</span>
+<span class="font-headline text-[10px] font-bold tracking-wider mt-0.5">Plan</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full py-3 px-6 -mt-10 shadow-xl shadow-primary/30 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-headline text-[10px] font-bold tracking-wider mt-0.5">Circle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-6 hover:bg-surface-container-low rounded-full transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-headline text-[10px] font-bold tracking-wider mt-0.5">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-6 hover:bg-surface-container-low rounded-full transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+<span class="font-headline text-[10px] font-bold tracking-wider mt-0.5">Admin</span>
+</div>
+</nav>
+</body></html>
