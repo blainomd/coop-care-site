@@ -1,0 +1,41 @@
+# co-op.care
+
+> Worker-owned cooperative care powered by physician-supervised AI. Caregivers earn $25-28/hr W-2 with equity. Families get companion care that pays for itself through HSA/FSA.
+
+## What we do
+co-op.care is a Colorado Limited Cooperative Association (LCA) providing companion care, advance care planning, and community services. AI handles scheduling, documentation, and billing. A physician reviews every clinical output. Caregivers are W-2 with equity (target turnover: 15% vs industry 77%).
+
+## Products
+- **Companion Care**: $35/hr, W-2 caregivers, physician-supervised
+- **CareGoals**: Free advance directive through AI-guided conversation
+- **ComfortCard**: Digital care identity (Apple Wallet, QR, NFC) with directive, emergency contacts, medications
+- **HSA/FSA Savings**: Letter of Medical Necessity unlocks pre-tax payment (saves 28-36%)
+
+## Pricing
+- Free: Advance directive conversation with Sage AI
+- $59/mo: Family membership (ComfortCard, companion care access, HSA eligibility)
+- Companion care: $35/hr (cooperative rate, 30%+ below market)
+
+## CMS alignment
+- AFHM attestation (May 15, 2026 deadline) — covers all 5 domains
+- CJR-X episode support for post-surgical home care
+- CCM/RPM/RTM billing infrastructure
+
+## Who we are
+co-op.care Technologies LLC (Colorado LCA). Co-founders: Blaine Warkentine, MD and Josh Emdur, DO (50-state licensed hospitalist, Medical Director).
+
+## Links
+- Website: https://co-op.care
+- CareGoals: https://caregoals.com
+- ComfortCard: https://comfortcard.org
+- Parent platform: https://solvinghealth.com
+- SurgeonValue: https://surgeonvalue.com
+
+## MCP connector
+```json
+"coop-care": {
+  "command": "npx",
+  "args": ["-y", "@anthropic-ai/mcp-remote",
+    "https://solvinghealth.com/mcp"]
+}
+```
