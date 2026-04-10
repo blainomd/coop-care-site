@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coop-care-v1';
+const CACHE_NAME = 'coop-care-v3';
 const SHELL_ASSETS = [
   '/',
   '/offline',
