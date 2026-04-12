@@ -40,7 +40,8 @@ export default function RootLayout({
             navigator.serviceWorker.register('/sw.js');
           }
         `}</Script>
-        <Script src="https://solvinghealth.com/chat-widget.js" data-channel="coopccare" data-color="#4A7C59" strategy="lazyOnload" />
+        <Script src="https://harnesshealth.ai/harness.js" strategy="lazyOnload" />
+        <Script src="https://solvinghealth.com/chat-widget.js" data-channel="coop-care" data-color="#4A7C59" strategy="lazyOnload" />
         <Script src="https://solvinghealth.com/voice-embed.js" data-site="coop-care" strategy="lazyOnload" />
       </body>
     </html>

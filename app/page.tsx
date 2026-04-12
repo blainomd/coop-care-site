@@ -89,18 +89,27 @@ export default function Home() {
       <section className="pt-28 pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-bark leading-[1.1]">
-            Nobody joins for
-            <br /><span className="text-sage-dark">home care.</span>
+            Care that knows
+            <br /><span className="text-sage-dark">your family.</span>
           </h1>
           <p className="mt-6 text-xl text-bark-light leading-relaxed max-w-2xl mx-auto">
-            They join because their back hurts. Because the kombucha is cheaper.
-            Because Tuesday was lonely. The care is already there when they need it.
+            Never navigate the system alone again. $59/month pays for itself — save $936/year in HSA tax benefits.
+            Caregivers earn $27/hr + equity. Never fill out a form again — Claude manages your healthcare.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <a href="/interpret" className="px-6 py-3 rounded-full text-sm font-medium bg-sage-dark text-white hover:bg-bark transition-colors">Upload a report. Get answers.</a>
             <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-bark border border-sage-light hover:border-sage transition-colors">Explore Services</a>
           </div>
-          <p className="mt-3 text-xs text-bark-light/50">Boulder, CO. Worker-owned. Physician-supervised.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-bark-light/40">
+            <a href="/caregiver" className="hover:text-sage-dark transition-colors">Become a caregiver-owner</a>
+            <span>·</span>
+            <a href="https://comfortcard.org" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">comfortcard.org</a>
+            <span>·</span>
+            <a href="https://caregoals.com" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">caregoals.com</a>
+            <span>·</span>
+            <a href="https://hsaletter.com" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">hsaletter.com</a>
+          </div>
+          <p className="mt-2 text-xs text-bark-light/30">Boulder, CO. Worker-owned. Physician-supervised.</p>
         </div>
       </section>
 
@@ -261,6 +270,7 @@ export default function Home() {
           <p className="text-sage-light mb-8">Boulder, CO. Launching 2026. 10 garages. 200 families. Care everywhere.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-sage-dark hover:bg-sage-50 transition-colors">Explore Services</a>
+            <a href="/caregiver" className="px-6 py-3 rounded-full text-sm font-medium bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors">Become a Caregiver-Owner</a>
             <a href="#connector" className="px-6 py-3 rounded-full text-sm font-medium bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors">Get the Connector</a>
           </div>
 
