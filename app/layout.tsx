@@ -39,8 +39,7 @@ export default function RootLayout({
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
           }
-        `}</Script><Script src="https://solvinghealth.com/chat-widget.js" data-channel="coop-care" data-color="#4A7C59" strategy="lazyOnload" />
-        <Script src="https://solvinghealth.com/voice-embed.js" data-site="coop-care" strategy="lazyOnload" />
+        `}</Script>
         <Script src="https://solvinghealth.com/footer.js" data-brand="co-op.care" data-theme="light" strategy="lazyOnload" />
       </body>
     </html>
