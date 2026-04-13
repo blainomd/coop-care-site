@@ -60,15 +60,18 @@ export default function CaregiverPage() {
   }
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-[#FEFCF6]">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-light/30">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FEFCF6]/95 backdrop-blur-md border-b border-[#C5D4B5]/40">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <img src="/icon.svg" alt="co-op.care" className="w-8 h-8 rounded-md" />
-            <span className="text-lg font-bold tracking-tight text-bark">co-op.care</span>
+          <a href="/" className="flex items-center gap-2.5">
+            <img src="/icon.svg" alt="co-op.care" className="w-8 h-8 rounded-lg" />
+            <span className="text-base font-bold tracking-tight text-[#292524]">co-op.care</span>
           </a>
-          <a href="#apply" className="text-sm px-4 py-2 bg-sage-dark text-white rounded-full hover:bg-bark transition-colors">Apply Now</a>
+          <div className="flex items-center gap-3">
+            <a href="/" className="hidden sm:block text-sm text-[#57534E] hover:text-[#4A6741] transition-colors">For families</a>
+            <a href="#apply" className="text-sm px-4 py-2 bg-[#4A6741] text-white rounded-full hover:bg-[#292524] transition-colors font-medium">Apply Now</a>
+          </div>
         </div>
       </nav>
 

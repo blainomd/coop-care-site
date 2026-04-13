@@ -5,14 +5,15 @@ import { useState } from "react";
 function HSACalculator() {
   const [monthlySpend, setMonthlySpend] = useState(500);
   const taxRate = 0.32;
-  const annualSpend = monthlySpend * 12;
-  const annualSavings = Math.round(annualSpend * taxRate);
+  const annualSavings = Math.round(monthlySpend * 12 * taxRate);
   const monthlySavings = Math.round(monthlySpend * taxRate);
 
   return (
     <div className="max-w-lg mx-auto">
       <div className="mb-8">
-        <label className="block text-sm font-medium text-white/60 mb-3">Monthly care spend</label>
+        <label className="block text-sm font-medium text-white/60 mb-3">
+          Monthly care spend
+        </label>
         <input
           type="range"
           min={100}
@@ -20,379 +21,430 @@ function HSACalculator() {
           step={50}
           value={monthlySpend}
           onChange={(e) => setMonthlySpend(Number(e.target.value))}
-          className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-sage-light"
+          className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#C5D4B5]"
         />
         <div className="flex justify-between text-xs text-white/30 mt-2">
           <span>$100/mo</span>
-          <span className="text-white font-medium text-lg">${monthlySpend}/mo</span>
+          <span className="text-white font-semibold text-lg">${monthlySpend}/mo</span>
           <span>$3,000/mo</span>
         </div>
       </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white/5 rounded-xl p-5 text-center">
-          <div className="text-3xl font-bold text-sage-light">${monthlySavings}</div>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="bg-white/5 rounded-xl p-5 text-center border border-white/10">
+          <div className="text-3xl font-bold text-[#C5D4B5]">${monthlySavings}</div>
           <div className="text-xs text-white/40 mt-1">saved per month</div>
         </div>
-        <div className="bg-white/5 rounded-xl p-5 text-center">
-          <div className="text-3xl font-bold text-sage-light">${annualSavings.toLocaleString()}</div>
+        <div className="bg-white/5 rounded-xl p-5 text-center border border-white/10">
+          <div className="text-3xl font-bold text-[#C5D4B5]">${annualSavings.toLocaleString()}</div>
           <div className="text-xs text-white/40 mt-1">saved per year</div>
         </div>
       </div>
-      <p className="text-center text-white/30 text-xs mt-4">Based on 32% combined tax rate. HSA/FSA pays with pre-tax dollars — you keep the difference.</p>
+      <p className="text-center text-white/30 text-xs">
+        Based on 32% combined tax rate. HSA/FSA pays with pre-tax dollars — you keep the difference.
+      </p>
     </div>
   );
 }
 
-const ENTRY_POINTS = [
-  { q: "Does your back hurt?", a: "$10/month yoga in a neighbor's backyard", link: "https://www.doesyourbackhurt.com", color: "bg-[#0D9488]" },
-  { q: "Tired of $5 kombucha?", a: "$2.50 from a garage tap. Zero waste.", link: "https://www.fillforward.com", color: "bg-[#D97706]" },
-  { q: "Want to grow your own food?", a: "$89 mushroom incubator. Harvest in 25 days.", link: "https://www.sh-room.com", color: "bg-[#7A9166]" },
-  { q: "HSA covers more than you think?", a: "Save 28-36% on care with ComfortCard.", link: "https://www.comfortcard.org", color: "bg-[#8B6914]" },
-  { q: "Hip won't stop hurting?", a: "Free AI assessment. No login. Just answers.", link: "https://www.hippain.help", color: "bg-[#4A6741]" },
-  { q: "Worried about falling?", a: "Free fall risk assessment. Stay independent.", link: "https://www.fallprevention.help", color: "bg-[#DC2626]" },
-  { q: "Memory slipping?", a: "Free cognitive screening. Know where you stand.", link: "https://www.memoryloss.help", color: "bg-[#6B4C8A]" },
-  { q: "Dog walker cancelled again?", a: "$12/walk. Same cooperative. Same trust.", link: "#services", color: "bg-sage-dark" },
-  { q: "Want to earn $28/hr with equity?", a: "Become a caregiver-owner.", link: "#join", color: "bg-[#1B2A4A]" },
-];
-
-const SERVICES = [
-  { name: "Companion Care", price: "$35/hr", note: "W-2 caregivers, physician-supervised" },
-  { name: "Backyard Yoga", price: "$10/mo", note: "3x/week, ACCESS MSK eligible" },
-  { name: "Kombucha Refill", price: "$2.50/pint", note: "Garage tap, zero waste" },
-  { name: "Lawn Care", price: "$25/visit", note: "40-70% below market" },
-  { name: "Snow Removal", price: "$30/visit", note: "Same workers, year-round" },
-  { name: "Dog Walking", price: "$12/walk", note: "Same neighborhood, same trust" },
-  { name: "Handyman", price: "$45/hr", note: "Vetted co-op members" },
-  { name: "Grocery Run", price: "$18/trip", note: "Bulk buying for 5 families at once" },
-  { name: "Tech Support", price: "$25/visit", note: "iPad setup, WiFi, telehealth" },
-  { name: "Meal Delivery", price: "Included", note: "Community kitchen, during care visits" },
-  { name: "Advance Directive", price: "Included", note: "CareGoals + physician review" },
-  { name: "Emergency Profile", price: "Free", note: "ComfortCard NFC/QR, always" },
-];
-
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#FEFCF6]">
+
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-light/30">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FEFCF6]/95 backdrop-blur-md border-b border-[#C5D4B5]/40">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img src="/icon.svg" alt="co-op.care" className="w-8 h-8 rounded-md" />
-            <span className="text-lg font-bold tracking-tight text-bark">co-op.care</span>
+          <div className="flex items-center gap-2.5">
+            <img src="/icon.svg" alt="co-op.care" className="w-8 h-8 rounded-lg" />
+            <span className="text-base font-bold tracking-tight text-[#292524]">co-op.care</span>
           </div>
-          <a href="#join" className="text-sm px-4 py-2 bg-sage-dark text-white rounded-full hover:bg-bark transition-colors">Join the Cooperative</a>
+          <div className="flex items-center gap-3">
+            <a href="/membership" className="hidden sm:block text-sm text-[#57534E] hover:text-[#4A7C59] transition-colors">Membership</a>
+            <a href="/caregiver" className="hidden sm:block text-sm text-[#57534E] hover:text-[#4A7C59] transition-colors">Become a Caregiver</a>
+            <a
+              href="/assess"
+              className="text-sm px-4 py-2 bg-[#4A6741] text-white rounded-full hover:bg-[#292524] transition-colors font-medium"
+            >
+              Free Assessment
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="pt-28 pb-20 px-6">
+      <section className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] uppercase text-sage-dark mb-4">Boulder, CO — Worker-Owned — Physician-Supervised</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-bark leading-[1.1]">
-            The app that comes
-            <br /><span className="text-sage-dark">with a caregiver.</span>
+          <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold mb-5">
+            Boulder, CO &nbsp;·&nbsp; Worker-Owned &nbsp;·&nbsp; Physician-Supervised
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#292524] leading-[1.05] mb-6">
+            The app that comes<br />
+            <span className="text-[#4A6741]">with a caregiver.</span>
           </h1>
-          <p className="mt-6 text-xl text-bark-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-[#57534E] leading-relaxed max-w-2xl mx-auto mb-10">
             $59/month membership. Pays for itself — save $936/year using HSA/FSA pre-tax dollars.
             When you need care, the caregiver already knows your name.
           </p>
-          <div className="mt-8 flex justify-center">
-            <a href="#join" className="px-8 py-4 rounded-full text-base font-semibold bg-sage-dark text-white hover:bg-bark transition-colors shadow-sm">
-              Talk to Sage about your family&apos;s care
-            </a>
-          </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-bark-light/50">
+          <a
+            href="/assess"
+            className="inline-block px-9 py-4 rounded-full text-base font-semibold bg-[#4A6741] text-white hover:bg-[#292524] transition-colors shadow-sm"
+          >
+            Talk to Sage about your family&apos;s care
+          </a>
+          <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#57534E]/60">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] inline-block"></span>
               Free assessment
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] inline-block"></span>
               HSA/FSA eligible
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] inline-block"></span>
               No forms
             </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] inline-block"></span>
+              50-state physician oversight
+            </span>
           </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-bark-light/40">
-            <a href="/caregiver" className="hover:text-sage-dark transition-colors">Become a caregiver-owner</a>
-            <span>·</span>
-            <a href="https://comfortcard.org" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">comfortcard.org</a>
-            <span>·</span>
-            <a href="https://caregoals.com" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">caregoals.com</a>
-            <span>·</span>
-            <a href="https://hsaletter.com" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">hsaletter.com</a>
+        </div>
+      </section>
+
+      {/* The Story — 4-step journey */}
+      <section className="py-20 px-6 bg-white border-y border-[#C5D4B5]/30">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold text-center mb-3">How it works</p>
+          <h2 className="text-3xl font-bold text-[#292524] text-center mb-14">One conversation. Everything flows.</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                n: "01",
+                title: "Talk to Sage",
+                desc: "No forms. Sage has a real conversation — learns about your mom, your schedule, what keeps you up at night."
+              },
+              {
+                n: "02",
+                title: "Get assessed",
+                desc: "Free care needs assessment. Physician-reviewed. 10 minutes. Sage builds your family's living care profile."
+              },
+              {
+                n: "03",
+                title: "Get your LMN",
+                desc: "Josh Emdur DO signs your Letter of Medical Necessity. Your HSA/FSA unlocks. Care costs 32% less immediately."
+              },
+              {
+                n: "04",
+                title: "Meet your caregiver",
+                desc: "Matched from your neighborhood. She already knows the context. She earns equity for staying — and she stays."
+              }
+            ].map((step) => (
+              <div key={step.n} className="bg-[#FEFCF6] rounded-2xl p-6 border border-[#C5D4B5]/30">
+                <div className="text-3xl font-bold text-[#C5D4B5] mb-4 font-mono">{step.n}</div>
+                <h3 className="font-bold text-[#292524] mb-2">{step.title}</h3>
+                <p className="text-sm text-[#57534E] leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Value Stack */}
-      <section className="py-12 px-6 bg-sage-50 border-y border-sage-light/30">
+      <section className="py-16 px-6 bg-[#F0F5EE]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-bark-light/40 text-center mb-8">What $59/month gets you</p>
+          <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold text-center mb-10">What $59/month gets you</p>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-sage-dark mb-1">$199</div>
-              <div className="font-semibold text-bark text-sm mb-1">LMN for HSA/FSA</div>
-              <div className="text-xs text-bark-light">Physician-signed Letter of Medical Necessity. Unlock pre-tax savings on care you&apos;re already paying for.</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-sage-dark mb-1">$400–12K/mo</div>
-              <div className="font-semibold text-bark text-sm mb-1">Companion Care</div>
-              <div className="text-xs text-bark-light">W-2 caregivers. $25–28/hr + equity. 50-state licensed physician oversight.</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-sage-dark mb-1">$936/yr</div>
-              <div className="font-semibold text-bark text-sm mb-1">Average HSA Savings</div>
-              <div className="text-xs text-bark-light">Pay care with pre-tax dollars. The $59/mo membership pays for itself many times over.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Entry Points */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-bark text-center mb-4">Every front door leads here.</h2>
-          <p className="text-bark-light text-center mb-12 max-w-lg mx-auto">25 websites. 25 pain points. One cooperative. Which one brought you?</p>
-          <div className="grid sm:grid-cols-3 gap-3">
-            {ENTRY_POINTS.map((ep) => (
-              <a key={ep.q} href={ep.link} target={ep.link.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
-                className="group p-5 rounded-2xl border border-sage-light/20 hover:border-sage/40 hover:shadow-lg transition-all bg-cream">
-                <p className="font-semibold text-bark text-sm mb-2 group-hover:text-sage-dark transition-colors">{ep.q}</p>
-                <p className="text-xs text-bark-light">{ep.a}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Spectrum */}
-      <section className="py-20 px-6 bg-sage-dark text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">One person. One neighborhood. One health system.</h2>
-          <p className="text-sage-light text-lg leading-relaxed mb-12">co-op.care works at every scale. The same infrastructure that serves one family serves an entire health system&apos;s discharge population.</p>
-
-          <div className="flex flex-col gap-0 max-w-md mx-auto text-left">
-            {[
-              { scale: "You", desc: "Download the app. Have a conversation. Get a ComfortCard." },
-              { scale: "Your family", desc: "Join for $59/mo. Yoga, kombucha, caregiver access, HSA savings." },
-              { scale: "Your block", desc: "10 neighbors share a garage node. Refills, services, community." },
-              { scale: "Your neighborhood", desc: "200 families. 10 garage nodes. $167K/year through the cooperative." },
-              { scale: "Your health system", desc: "Reduced readmissions. Documented directives. Falls prevented. They partner because we produce the outcomes they're measured on." },
-            ].map((item, i) => (
-              <div key={item.scale} className="flex gap-4 py-5 border-b border-white/10">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-xs font-bold">{i + 1}</div>
-                <div>
-                  <div className="font-bold text-white">{item.scale}</div>
-                  <div className="text-sage-light text-sm mt-1">{item.desc}</div>
-                </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40 text-center">
+              <div className="text-2xl font-bold text-[#4A6741] mb-1">$199</div>
+              <div className="font-semibold text-[#292524] text-sm mb-2">LMN for HSA/FSA</div>
+              <div className="text-xs text-[#57534E] leading-relaxed">
+                Physician-signed Letter of Medical Necessity. Unlocks pre-tax savings on care you&apos;re already paying for.
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section id="services" className="py-20 px-6 bg-cream">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-bark text-center mb-4">Everything your neighborhood needs.</h2>
-          <p className="text-bark-light text-center mb-12">All cooperative-owned. All 30%+ below market. All building equity.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {SERVICES.map((s) => (
-              <div key={s.name} className="bg-white rounded-xl p-5 border border-sage-light/20">
-                <div className="flex justify-between items-start mb-1">
-                  <span className="font-semibold text-bark text-sm">{s.name}</span>
-                  <span className="text-xs font-medium text-sage-dark">{s.price}</span>
-                </div>
-                <p className="text-xs text-bark-light">{s.note}</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40 text-center">
+              <div className="text-2xl font-bold text-[#4A6741] mb-1">$400–12K/mo</div>
+              <div className="font-semibold text-[#292524] text-sm mb-2">Companion Care</div>
+              <div className="text-xs text-[#57534E] leading-relaxed">
+                W-2 caregivers earning $25–28/hr plus equity. Physician-supervised. From your neighborhood.
               </div>
-            ))}
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40 text-center">
+              <div className="text-2xl font-bold text-[#4A6741] mb-1">$936/yr</div>
+              <div className="font-semibold text-[#292524] text-sm mb-2">Average HSA Savings</div>
+              <div className="text-xs text-[#57534E] leading-relaxed">
+                Pay for care with pre-tax dollars. The $59/mo membership pays for itself many times over.
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="/membership"
+              className="inline-block text-sm font-medium text-[#4A6741] hover:text-[#292524] transition-colors underline underline-offset-4"
+            >
+              See full membership breakdown
+            </a>
           </div>
         </div>
       </section>
 
-      {/* How It's Different */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-bark text-center mb-12">Why this can&apos;t be bought.</h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-6 bg-cream rounded-2xl">
-              <h3 className="font-bold text-bark mb-2">Worker-owned</h3>
-              <p className="text-sm text-bark-light">Caregivers earn $25-28/hr W-2 with equity. Industry average: $16/hr, 1099, no benefits. When caregivers own what they build, turnover drops from 77% to 35-40%.</p>
-            </div>
-            <div className="p-6 bg-cream rounded-2xl">
-              <h3 className="font-bold text-bark mb-2">Physician-supervised</h3>
-              <p className="text-sm text-bark-light">50-state licensed hospitalist physician. Every clinical output reviewed before delivery. AI drafts, physician decides.</p>
-            </div>
-            <div className="p-6 bg-cream rounded-2xl">
-              <h3 className="font-bold text-bark mb-2">PE-proof</h3>
-              <p className="text-sm text-bark-light">Colorado Limited Cooperative Association. 51% patron voting enforced by law. Can&apos;t be acquired. Can&apos;t be flipped. Can&apos;t extract.</p>
-            </div>
-            <div className="p-6 bg-cream rounded-2xl">
-              <h3 className="font-bold text-bark mb-2">CMS-aligned</h3>
-              <p className="text-sm text-bark-light">ACCESS MSK, LEAD, TEAM, BALANCE. Every major CMS innovation model points at the home. We built the home infrastructure.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ComfortCard + Wallet */}
-      <section className="py-20 px-6 bg-bark text-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">One card. Everything flows through it.</h2>
-            <p className="text-white/50">ComfortCard is your care identity, your HSA/FSA payment, your cooperative equity, and your emergency profile.</p>
+      {/* The Cooperative Difference */}
+      <section className="py-20 px-6 bg-[#4A6741] text-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#C5D4B5] font-semibold mb-3">The cooperative difference</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Caregivers stay because they own it.</h2>
+            <p className="text-[#C5D4B5] text-lg max-w-xl mx-auto">
+              Home care has 77% annual turnover. Families lose caregivers constantly.
+              We built a different structure — one where staying is in everyone&apos;s interest.
+            </p>
           </div>
 
-          <div className="bg-white/5 rounded-2xl p-6 sm:p-8 font-mono text-sm max-w-md mx-auto">
-            <div className="text-white/30 text-xs mb-4">ComfortCard Wallet</div>
-            <div className="space-y-2 mb-6">
-              <div className="flex justify-between"><span className="text-white/50">HSA Balance</span><span>$3,240</span></div>
-              <div className="flex justify-between"><span className="text-white/50">FSA Balance</span><span>$1,100</span></div>
-              <div className="flex justify-between"><span className="text-white/50">Cooperative Equity</span><span className="text-sage-light">$847</span></div>
-              <div className="flex justify-between"><span className="text-white/50">Time Bank</span><span>14 hrs</span></div>
-              <div className="flex justify-between"><span className="text-white/50">This Month&apos;s Savings</span><span className="text-sage-light">$312</span></div>
-            </div>
-            <div className="border-t border-white/10 pt-4 space-y-1.5 text-xs">
-              <div className="text-white/30 mb-2">Recent</div>
-              <div className="flex justify-between"><span className="text-white/40">Tue: Yoga</span><span>$10 (HSA) +$0.30 eq</span></div>
-              <div className="flex justify-between"><span className="text-white/40">Tue: Kombucha</span><span>$5.00 +$0.15 eq</span></div>
-              <div className="flex justify-between"><span className="text-white/40">Wed: Lawn</span><span>$25 (HSA) +$0.75 eq</span></div>
-              <div className="flex justify-between"><span className="text-white/40">Fri: Caregiver 4hrs</span><span>$140 (HSA) +$4.20 eq</span></div>
-              <div className="flex justify-between"><span className="text-white/40">Sat: Time Bank</span><span>+2 hrs (tech support)</span></div>
-            </div>
-            <div className="border-t border-white/10 pt-4 mt-4 text-xs">
-              <div className="text-white/30 mb-2">Upcoming Votes</div>
-              <div className="text-white/60">Add Upstart Kombucha as provider? (Apr 12)</div>
-              <div className="text-white/60">Lease community Cybercab? (Apr 20)</div>
+          {/* Turnover stat */}
+          <div className="bg-white/10 rounded-2xl p-6 text-center mb-10 max-w-sm mx-auto border border-white/20">
+            <div className="text-xs text-[#C5D4B5] mb-3 uppercase tracking-wider">Industry turnover</div>
+            <div className="flex items-center justify-center gap-6">
+              <div>
+                <div className="text-4xl font-bold text-white/40 line-through">77%</div>
+                <div className="text-xs text-white/40 mt-1">traditional agency</div>
+              </div>
+              <div className="text-[#C5D4B5] text-xl">→</div>
+              <div>
+                <div className="text-4xl font-bold text-[#C5D4B5]">35–40%</div>
+                <div className="text-xs text-[#C5D4B5] mt-1">co-op.care</div>
+              </div>
             </div>
           </div>
 
-          <p className="text-center text-white/30 text-xs mt-6">3% equity on every transaction. You own what you use.</p>
+          <div className="grid sm:grid-cols-3 gap-5">
+            <div className="bg-white/8 rounded-2xl p-6 border border-white/15">
+              <div className="mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#C5D4B5]">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-white mb-2">Worker-owned</h3>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Caregivers earn $25–28/hr W-2 with cooperative equity. Every hour builds their ownership stake. After 90 days, they vote on how the cooperative runs.
+              </p>
+            </div>
+            <div className="bg-white/8 rounded-2xl p-6 border border-white/15">
+              <div className="mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#C5D4B5]">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-white mb-2">Physician-supervised</h3>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Josh Emdur DO — licensed in all 50 states, BCH hospitalist since 2008 — reviews every clinical output before delivery. AI drafts. He decides.
+              </p>
+            </div>
+            <div className="bg-white/8 rounded-2xl p-6 border border-white/15">
+              <div className="mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#C5D4B5]">
+                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-white mb-2">PE-proof structure</h3>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Colorado Limited Cooperative Association. 51% patron voting enforced by law. Cannot be acquired. Cannot be flipped. Cannot extract.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* HSA Savings Calculator */}
-      <section className="py-20 px-6 bg-sage-dark text-white">
+      <section className="py-20 px-6 bg-[#292524] text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">See what you save with HSA/FSA.</h2>
-            <p className="text-sage-light text-lg">Care through co-op.care is HSA/FSA eligible. That means you pay with pre-tax dollars and keep 28-36% instantly.</p>
+            <p className="text-xs tracking-[0.25em] uppercase text-[#C5D4B5] font-semibold mb-3">HSA/FSA Calculator</p>
+            <h2 className="text-3xl font-bold mb-4">See what you save.</h2>
+            <p className="text-white/50 text-lg">
+              Care through co-op.care is HSA/FSA eligible. Pay with pre-tax dollars and keep 28–36% instantly.
+            </p>
           </div>
           <HSACalculator />
-        </div>
-      </section>
-
-      {/* The Mission */}
-      <section id="community" className="py-20 px-6 bg-sage-50">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] uppercase text-sage-dark mb-4">The Mission</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-bark mb-6">Care and family are the mission.</h2>
-          <p className="text-bark-light text-lg leading-relaxed mb-4">
-            Everything else is economic gravity. The kombucha, the yoga, the HSA savings,
-            the surgeon billing — it pulls people into community.
-          </p>
-          <p className="text-bark-light text-lg leading-relaxed">
-            When you need care, the caregiver already knows your name.
-            Because she taught your yoga class and filled your growler last Tuesday.
-          </p>
-        </div>
-      </section>
-
-      {/* Join */}
-      <section id="join" className="py-20 px-6 bg-sage-dark text-white">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Join the cooperative.</h2>
-          <p className="text-sage-light mb-8">Boulder, CO. Launching 2026. 10 garages. 200 families. Care everywhere.</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-sage-dark hover:bg-sage-50 transition-colors">Explore Services</a>
-            <a href="/caregiver" className="px-6 py-3 rounded-full text-sm font-medium bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors">Become a Caregiver-Owner</a>
-            <a href="#connector" className="px-6 py-3 rounded-full text-sm font-medium bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors">Get the Connector</a>
+          <div className="text-center mt-10">
+            <a
+              href="/assess"
+              className="inline-block px-8 py-4 rounded-full bg-[#4A6741] text-white font-semibold hover:bg-[#4A7C59] transition-colors"
+            >
+              Get your free LMN assessment
+            </a>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-3 gap-4 mt-12 max-w-sm mx-auto">
+      {/* The Story — Dorothy */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold mb-3">A real family</p>
+          <h2 className="text-3xl font-bold text-[#292524] mb-8">
+            Sarah was worried about her mom.<br />
+            <span className="text-[#4A6741]">She found co-op.care.</span>
+          </h2>
+          <div className="space-y-6 text-[#57534E] leading-relaxed">
+            <p className="text-lg">
+              Her mother was 79, living alone in Boulder. Falls risk. Cognitive decline starting.
+              Sarah was flying in from Chicago every few months, losing sleep in between.
+            </p>
+            <p>
+              She talked to Sage. No forms — just a real conversation about her mom&apos;s situation.
+              Within a week, her mom had a care assessment, a physician-signed LMN unlocking her HSA,
+              and a caregiver named Maria who lived four blocks away.
+            </p>
+            <p>
+              Maria had been a caregiver-owner for six months. She knew the neighborhood. She had equity
+              in the cooperative. She wasn&apos;t going anywhere.
+            </p>
+            <p className="font-semibold text-[#292524]">
+              Sarah still calls weekly. But she sleeps through the night now.
+            </p>
+          </div>
+          <div className="mt-10">
+            <a
+              href="/assess"
+              className="inline-block px-8 py-4 rounded-full bg-[#4A6741] text-white font-semibold hover:bg-[#292524] transition-colors"
+            >
+              Start with a free assessment
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What gets recorded */}
+      <section className="py-20 px-6 bg-[#F0F5EE]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold mb-3">The living profile</p>
+            <h2 className="text-3xl font-bold text-[#292524] mb-4">Her stories get recorded. Her wishes are documented.</h2>
+            <p className="text-[#57534E] text-lg max-w-2xl mx-auto">
+              CareGoals and ComfortCard work together. Your family&apos;s care preferences, advance directive,
+              and emergency profile — all built from natural conversations with Sage.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40">
+              <div className="mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#4A6741]">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-[#292524] mb-2">Advance directive</h3>
+              <p className="text-sm text-[#57534E] leading-relaxed">
+                The advance directive writes itself — from conversations with Sage about what matters to her.
+                Physician-reviewed. Legally binding.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40">
+              <div className="mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#4A6741]">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-[#292524] mb-2">Stories preserved</h3>
+              <p className="text-sm text-[#57534E] leading-relaxed">
+                Sage captures stories during care visits. Her recipes, her memories, her values.
+                Living archive for family — not just a medical record.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#C5D4B5]/40">
+              <div className="mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#4A6741]">
+                  <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M16 10h.01M12 10h.01M8 10h.01M16 14h.01M12 14h.01M8 14h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-[#292524] mb-2">ComfortCard</h3>
+              <p className="text-sm text-[#57534E] leading-relaxed">
+                QR + NFC emergency profile. Every first responder sees her allergies, medications,
+                healthcare proxy, and wishes — instantly, from her wallet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA + Join */}
+      <section id="join" className="py-20 px-6 bg-[#292524] text-white">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Start with a conversation.</h2>
+          <p className="text-white/50 text-lg mb-10">
+            Boulder, CO. Launching 2026. $59/month. Your first assessment is always free.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
+            <a
+              href="/assess"
+              className="px-8 py-4 rounded-full font-semibold bg-[#4A6741] text-white hover:bg-[#4A7C59] transition-colors"
+            >
+              Free assessment — no forms
+            </a>
+            <a
+              href="/membership"
+              className="px-8 py-4 rounded-full font-semibold bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors"
+            >
+              See $59/mo membership
+            </a>
+            <a
+              href="/caregiver"
+              className="px-8 py-4 rounded-full font-semibold bg-white/10 text-white border border-white/20 hover:border-white/50 transition-colors"
+            >
+              Become a caregiver-owner
+            </a>
+          </div>
+          <div className="grid grid-cols-3 gap-6 max-w-xs mx-auto">
             <div className="text-center">
               <div className="text-2xl font-bold">$59</div>
-              <div className="text-sage-light/50 text-xs">per month</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold">3%</div>
-              <div className="text-sage-light/50 text-xs">equity/transaction</div>
+              <div className="text-white/30 text-xs mt-1">per month</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">1</div>
-              <div className="text-sage-light/50 text-xs">vote per member</div>
+              <div className="text-white/30 text-xs mt-1">vote per member</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold">50</div>
+              <div className="text-white/30 text-xs mt-1">states covered</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Connector */}
-      <section id="connector" className="py-20 px-6 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-bark mb-4">
-            Add co-op.care to Claude
-          </h2>
-          <p className="text-bark-light text-lg mb-8 max-w-xl mx-auto">
-            The co-op.care MCP connector gives Claude instant access to care tools, HSA savings estimates, caregiver matching, and your family&apos;s care history. Works in Claude Desktop and Claude.ai.
-          </p>
-          <div className="bg-cream rounded-2xl border border-sage-light/30 p-6 text-left max-w-lg mx-auto mb-6">
-            <p className="text-xs font-medium text-bark-light/50 uppercase tracking-wider mb-3">Claude Desktop — claude_desktop_config.json</p>
-            <pre className="text-sm text-bark overflow-x-auto whitespace-pre font-mono leading-relaxed">{`"coop-care": {
-  "command": "npx",
-  "args": ["-y", "@anthropic-ai/mcp-remote",
-    "https://mcp.co-op.care"]
-}`}</pre>
+      {/* Ecosystem footer strip */}
+      <section className="py-10 px-6 bg-[#1a1715]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-white/20 text-xs text-center tracking-widest uppercase mb-5">Part of the SolvingHealth ecosystem</p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            {[
+              { label: "solvinghealth.com", href: "https://solvinghealth.com" },
+              { label: "comfortcard.org", href: "https://comfortcard.org" },
+              { label: "caregoals.com", href: "https://caregoals.com" },
+              { label: "hsaletter.com", href: "https://hsaletter.com" },
+              { label: "altru.care", href: "https://altru.care" },
+              { label: "surgeonvalue.com", href: "https://surgeonvalue.com" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/20 hover:text-white/50 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-3 text-xs text-bark-light/50 mb-8">
-            <span>16 care tools</span>
-            <span>·</span>
-            <span>HSA savings calculator</span>
-            <span>·</span>
-            <span>Caregiver matching</span>
-            <span>·</span>
-            <span>LMN generation</span>
-          </div>
-          <p className="text-bark-light text-sm">
-            Don&apos;t have Claude? Get it free at{" "}
-            <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-sage-dark font-medium hover:underline">claude.ai</a>
-            {" "}or use the Sage chat widget on this page.
+          <p className="text-center text-white/10 text-xs mt-6">
+            co-op.care Technologies LLC — Boulder, Colorado. Worker-owned. Physician-supervised.
           </p>
         </div>
       </section>
 
-      {/* Ecosystem */}
-      <section className="py-12 px-6 bg-bark">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-white/20 text-xs text-center tracking-widest uppercase mb-6">The Ecosystem</p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-            <a href="https://www.solvinghealth.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">solvinghealth.com</a>
-            <a href="https://www.surgeonvalue.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">surgeonvalue.com</a>
-            <a href="https://www.comfortcard.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">comfortcard.org</a>
-            <a href="https://www.caregoals.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">caregoals.com</a>
-            <a href="https://www.hsaletter.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">hsaletter.com</a>
-            <a href="https://www.altru.care" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">altru.care</a>
-            <a href="https://www.mapofyou.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">mapofyou.com</a>
-            <a href="https://www.sh-room.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">sh-room.com</a>
-            <a href="https://www.fillforward.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fillforward.com</a>
-            <a href="https://www.opusocial.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">opusocial.com</a>
-            <a href="https://www.doesyourbackhurt.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">doesyourbackhurt.com</a>
-            <a href="https://www.hippain.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">hippain.help</a>
-            <a href="https://www.fallprevention.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fallprevention.help</a>
-            <a href="https://www.memoryloss.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">memoryloss.help</a>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs mt-6">
-            <a href="/caregiver" className="text-white/15 hover:text-white/40 transition-colors">Become a caregiver-owner</a>
-            <a href="/interpret" className="text-white/15 hover:text-white/40 transition-colors">Interpret a document</a>
-            <a href="#connector" className="text-white/15 hover:text-white/40 transition-colors">MCP connector</a>
-            <a href="#join" className="text-white/15 hover:text-white/40 transition-colors">Join the cooperative</a>
-          </div>
-          <p className="text-center text-white/10 text-xs mt-8">co-op.care Technologies LLC — Boulder, Colorado. Worker-owned. Built by AI.</p>
-        </div>
-      </section>
     </div>
   );
 }
