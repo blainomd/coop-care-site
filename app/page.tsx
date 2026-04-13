@@ -415,6 +415,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Medical Disclaimer */}
+      <section className="py-6 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs text-gray-400">
+            This platform provides health information and care coordination tools, not medical advice.
+            All clinical services are supervised by a licensed physician.
+            Always consult a qualified healthcare provider for diagnosis and treatment.
+          </p>
+          <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-400">
+            <a href="https://solvinghealth.com/privacy" className="hover:text-gray-600">Privacy</a>
+            <span>|</span>
+            <a href="https://solvinghealth.com/terms" className="hover:text-gray-600">Terms</a>
+            <span>|</span>
+            <a href="https://solvinghealth.com/hipaa" className="hover:text-gray-600">HIPAA Notice</a>
+          </div>
+        </div>
+      </section>
+
       {/* Ecosystem footer strip */}
       <section className="py-10 px-6 bg-[#1a1715]">
         <div className="max-w-5xl mx-auto">
