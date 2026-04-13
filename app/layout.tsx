@@ -41,6 +41,7 @@ export default function RootLayout({
           }
         `}</Script><Script src="https://solvinghealth.com/chat-widget.js" data-channel="coop-care" data-color="#4A7C59" strategy="lazyOnload" />
         <Script src="https://solvinghealth.com/voice-embed.js" data-site="coop-care" strategy="lazyOnload" />
+        <Script src="https://solvinghealth.com/footer.js" data-brand="co-op.care" data-theme="light" strategy="lazyOnload" />
       </body>
     </html>
   );
