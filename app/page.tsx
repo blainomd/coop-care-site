@@ -88,17 +88,33 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-28 pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-[0.3em] uppercase text-sage-dark mb-4">Boulder, CO — Worker-Owned — Physician-Supervised</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-bark leading-[1.1]">
-            Care that knows
-            <br /><span className="text-sage-dark">your family.</span>
+            The app that comes
+            <br /><span className="text-sage-dark">with a caregiver.</span>
           </h1>
           <p className="mt-6 text-xl text-bark-light leading-relaxed max-w-2xl mx-auto">
-            Never navigate the system alone again. $59/month pays for itself — save $936/year in HSA tax benefits.
-            Caregivers earn $27/hr + equity. Never fill out a form again — Claude manages your healthcare.
+            $59/month membership. Pays for itself — save $936/year using HSA/FSA pre-tax dollars.
+            When you need care, the caregiver already knows your name.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/interpret" className="px-6 py-3 rounded-full text-sm font-medium bg-sage-dark text-white hover:bg-bark transition-colors">Upload a report. Get answers.</a>
-            <a href="#services" className="px-6 py-3 rounded-full text-sm font-medium bg-white text-bark border border-sage-light hover:border-sage transition-colors">Explore Services</a>
+          <div className="mt-8 flex justify-center">
+            <a href="#join" className="px-8 py-4 rounded-full text-base font-semibold bg-sage-dark text-white hover:bg-bark transition-colors shadow-sm">
+              Talk to Sage about your family&apos;s care
+            </a>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-bark-light/50">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              Free assessment
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              HSA/FSA eligible
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-sage-dark inline-block"></span>
+              No forms
+            </span>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-bark-light/40">
             <a href="/caregiver" className="hover:text-sage-dark transition-colors">Become a caregiver-owner</a>
@@ -109,7 +125,30 @@ export default function Home() {
             <span>·</span>
             <a href="https://hsaletter.com" target="_blank" rel="noopener noreferrer" className="hover:text-sage-dark transition-colors">hsaletter.com</a>
           </div>
-          <p className="mt-2 text-xs text-bark-light/30">Boulder, CO. Worker-owned. Physician-supervised.</p>
+        </div>
+      </section>
+
+      {/* Value Stack */}
+      <section className="py-12 px-6 bg-sage-50 border-y border-sage-light/30">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[0.3em] uppercase text-bark-light/40 text-center mb-8">What $59/month gets you</p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-sage-dark mb-1">$199</div>
+              <div className="font-semibold text-bark text-sm mb-1">LMN for HSA/FSA</div>
+              <div className="text-xs text-bark-light">Physician-signed Letter of Medical Necessity. Unlock pre-tax savings on care you&apos;re already paying for.</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-sage-dark mb-1">$400–12K/mo</div>
+              <div className="font-semibold text-bark text-sm mb-1">Companion Care</div>
+              <div className="text-xs text-bark-light">W-2 caregivers. $25–28/hr + equity. 50-state licensed physician oversight.</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-sage-dark mb-1">$936/yr</div>
+              <div className="font-semibold text-bark text-sm mb-1">Average HSA Savings</div>
+              <div className="text-xs text-bark-light">Pay care with pre-tax dollars. The $59/mo membership pays for itself many times over.</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -182,11 +221,11 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="p-6 bg-cream rounded-2xl">
               <h3 className="font-bold text-bark mb-2">Worker-owned</h3>
-              <p className="text-sm text-bark-light">Caregivers earn $25-28/hr W-2 with equity. Industry average: $16/hr, 1099, no benefits. Our turnover target: 15%. Industry: 77%.</p>
+              <p className="text-sm text-bark-light">Caregivers earn $25-28/hr W-2 with equity. Industry average: $16/hr, 1099, no benefits. When caregivers own what they build, turnover drops from 77% to 35-40%.</p>
             </div>
             <div className="p-6 bg-cream rounded-2xl">
               <h3 className="font-bold text-bark mb-2">Physician-supervised</h3>
-              <p className="text-sm text-bark-light">Josh Emdur DO, 50-state licensed hospitalist. Every clinical output reviewed through ClinicalSwipe. AI drafts, physician decides.</p>
+              <p className="text-sm text-bark-light">50-state licensed hospitalist physician. Every clinical output reviewed before delivery. AI drafts, physician decides.</p>
             </div>
             <div className="p-6 bg-cream rounded-2xl">
               <h3 className="font-bold text-bark mb-2">PE-proof</h3>
@@ -295,23 +334,32 @@ export default function Home() {
       <section id="connector" className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-bark mb-4">
-            Get the co-op.care connector
+            Add co-op.care to Claude
           </h2>
           <p className="text-bark-light text-lg mb-8 max-w-xl mx-auto">
-            Add the SolvingHealth connector to Claude and get instant access to care tools, HSA savings estimates, caregiver matching, and cooperative services.
+            The co-op.care MCP connector gives Claude instant access to care tools, HSA savings estimates, caregiver matching, and your family&apos;s care history. Works in Claude Desktop and Claude.ai.
           </p>
-          <div className="bg-cream rounded-2xl border border-sage-light/30 p-6 text-left max-w-lg mx-auto mb-8">
-            <p className="text-xs font-medium text-bark-light/50 uppercase tracking-wider mb-3">Claude Desktop MCP Config</p>
+          <div className="bg-cream rounded-2xl border border-sage-light/30 p-6 text-left max-w-lg mx-auto mb-6">
+            <p className="text-xs font-medium text-bark-light/50 uppercase tracking-wider mb-3">Claude Desktop — claude_desktop_config.json</p>
             <pre className="text-sm text-bark overflow-x-auto whitespace-pre font-mono leading-relaxed">{`"coop-care": {
   "command": "npx",
   "args": ["-y", "@anthropic-ai/mcp-remote",
-    "https://www.solvinghealth.com/mcp"]
+    "https://mcp.co-op.care"]
 }`}</pre>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 text-xs text-bark-light/50 mb-8">
+            <span>16 care tools</span>
+            <span>·</span>
+            <span>HSA savings calculator</span>
+            <span>·</span>
+            <span>Caregiver matching</span>
+            <span>·</span>
+            <span>LMN generation</span>
           </div>
           <p className="text-bark-light text-sm">
             Don&apos;t have Claude? Get it free at{" "}
             <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-sage-dark font-medium hover:underline">claude.ai</a>
-            {" "}or use the chat and voice widgets on this page.
+            {" "}or use the Sage chat widget on this page.
           </p>
         </div>
       </section>
@@ -324,15 +372,25 @@ export default function Home() {
             <a href="https://www.solvinghealth.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">solvinghealth.com</a>
             <a href="https://www.surgeonvalue.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">surgeonvalue.com</a>
             <a href="https://www.comfortcard.org" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">comfortcard.org</a>
+            <a href="https://www.caregoals.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">caregoals.com</a>
+            <a href="https://www.hsaletter.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">hsaletter.com</a>
+            <a href="https://www.altru.care" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">altru.care</a>
             <a href="https://www.mapofyou.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">mapofyou.com</a>
             <a href="https://www.sh-room.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">sh-room.com</a>
             <a href="https://www.fillforward.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fillforward.com</a>
             <a href="https://www.opusocial.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">opusocial.com</a>
+            <a href="https://www.doesyourbackhurt.com" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">doesyourbackhurt.com</a>
             <a href="https://www.hippain.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">hippain.help</a>
             <a href="https://www.fallprevention.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">fallprevention.help</a>
             <a href="https://www.memoryloss.help" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white/60 transition-colors">memoryloss.help</a>
           </div>
-          <p className="text-center text-white/10 text-xs mt-8">Built entirely by AI. Boulder, Colorado.</p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs mt-6">
+            <a href="/caregiver" className="text-white/15 hover:text-white/40 transition-colors">Become a caregiver-owner</a>
+            <a href="/interpret" className="text-white/15 hover:text-white/40 transition-colors">Interpret a document</a>
+            <a href="#connector" className="text-white/15 hover:text-white/40 transition-colors">MCP connector</a>
+            <a href="#join" className="text-white/15 hover:text-white/40 transition-colors">Join the cooperative</a>
+          </div>
+          <p className="text-center text-white/10 text-xs mt-8">co-op.care Technologies LLC — Boulder, Colorado. Worker-owned. Built by AI.</p>
         </div>
       </section>
     </div>
