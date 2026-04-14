@@ -84,12 +84,20 @@ export default function Home() {
             $59/month membership. Pays for itself — save $936/year using HSA/FSA pre-tax dollars.
             When you need care, the caregiver already knows your name.
           </p>
-          <a
-            href="/assess"
-            className="inline-block px-9 py-4 rounded-full text-base font-semibold bg-[#4A6741] text-white hover:bg-[#292524] transition-colors shadow-sm"
-          >
-            Talk to Sage about your family&apos;s care
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a
+              href="/assess"
+              className="inline-block px-9 py-4 rounded-full text-base font-semibold bg-[#4A6741] text-white hover:bg-[#292524] transition-colors shadow-sm"
+            >
+              Talk to Sage about your family&apos;s care
+            </a>
+            <a
+              href="/assess?intent=lmn"
+              className="inline-block px-9 py-4 rounded-full text-base font-semibold bg-white text-[#4A6741] border border-[#4A6741]/30 hover:border-[#4A6741] hover:bg-[#F0F5EE] transition-colors"
+            >
+              Get a $199 LMN &rarr;
+            </a>
+          </div>
           <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#57534E]/60">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#4A6741] inline-block"></span>
@@ -131,7 +139,7 @@ export default function Home() {
               {
                 n: "03",
                 title: "Get your LMN",
-                desc: "Josh Emdur DO signs your Letter of Medical Necessity. Your HSA/FSA unlocks. Care costs 32% less immediately."
+                desc: "A 50-state licensed physician signs your Letter of Medical Necessity. Your HSA/FSA unlocks. Care costs 32% less immediately."
               },
               {
                 n: "04",
