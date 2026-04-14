@@ -42,7 +42,7 @@ export default function RootLayout({
             navigator.serviceWorker.register('/sw.js');
           }
         `}</Script>
-        <Script src="https://harnesshealth.ai/footer.js" data-brand="co-op.care" data-theme="light" strategy="lazyOnload" />
+        <Script src="https://harnesshealth.ai/footer.js?v=8" data-brand="co-op.care" data-theme="light" strategy="lazyOnload" />
       </body>
     </html>
   );
