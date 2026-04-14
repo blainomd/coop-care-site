@@ -415,6 +415,171 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <section className="py-12 px-6 bg-white border-y border-[#C5D4B5]/30">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-xs uppercase tracking-[0.25em] text-[#4A6741] font-semibold mb-8">Built for compliance. Built for families.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {[
+              { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", label: "HIPAA Compliant", desc: "PHI encrypted in transit and at rest. BAA available." },
+              { icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z", label: "Physician-Supervised", desc: "Josh Emdur DO, 50-state licensed, reviews every LMN." },
+              { icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z", label: "HSA/FSA Eligible", desc: "IRS 213(d) compliant. LMN unlocks pre-tax spending." },
+              { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5m4 0H9", label: "Worker-Owned Co-op", desc: "Colorado LCA. 51% patron voting. PE-proof by law." },
+            ].map((b) => (
+              <div key={b.label} className="flex flex-col items-center gap-2 text-center">
+                <div className="w-12 h-12 rounded-full bg-[#F0F5EE] flex items-center justify-center">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#4A6741]"><path d={b.icon} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <div className="font-bold text-sm text-[#292524]">{b.label}</div>
+                <div className="text-xs text-[#57534E] leading-relaxed">{b.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-20 px-6 bg-[#FEFCF6]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold mb-3">co-op.care vs. the alternatives</p>
+            <h2 className="text-3xl font-bold text-[#292524]">Why families choose co-op.care over Care.com or a staffing agency</h2>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm" style={{borderCollapse:"collapse"}}>
+              <thead>
+                <tr className="bg-[#4A6741] text-white">
+                  <th className="py-4 px-5 text-left font-bold rounded-tl-xl">Feature</th>
+                  <th className="py-4 px-5 text-center font-bold bg-[#C5D4B5] text-[#292524]">co-op.care</th>
+                  <th className="py-4 px-5 text-center font-bold">Care.com</th>
+                  <th className="py-4 px-5 text-center font-bold rounded-tr-xl">Staffing Agency</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Caregiver annual turnover", "35–40% (target)", "77% industry avg", "70–85%"],
+                  ["Caregiver employment type", "W-2 + equity", "1099 independent", "W-2 (agency keeps margin)"],
+                  ["Caregiver hourly rate", "$25–28/hr to worker", "Varies, often $15–18", "$18–22 (agency keeps $8–15)"],
+                  ["Physician oversight", "Josh Emdur DO, 50 states", "None", "None"],
+                  ["HSA/FSA LMN support", "Yes — $199 or included", "No", "No"],
+                  ["AI care coordination (Sage)", "Yes — no forms", "No", "No"],
+                  ["Advance directive / ComfortCard", "Yes — built-in", "No", "No"],
+                  ["Monthly cost to family", "$59/mo membership + care", "No membership, per-hire fees", "$300–600 placement fee"],
+                ].map(([feature, us, care, agency], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "border-b border-[#C5D4B5]/30" : "border-b border-[#C5D4B5]/30 bg-[#F0F5EE]"}>
+                    <td className="py-3 px-5 font-medium text-[#292524]">{feature}</td>
+                    <td className="py-3 px-5 text-center font-bold text-[#4A6741]">{us}</td>
+                    <td className="py-3 px-5 text-center text-[#57534E]">{care}</td>
+                    <td className="py-3 px-5 text-center text-[#57534E]">{agency}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-[#57534E]/60 text-center mt-4">Care.com turnover figure from PHI National 2024 report. Co-op.care turnover is a projection based on cooperative equity ownership model; not yet validated at scale.</p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6 bg-white" id="faq">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#4A6741] font-semibold mb-3">Common questions</p>
+            <h2 className="text-3xl font-bold text-[#292524]">Frequently asked questions</h2>
+          </div>
+          <div className="space-y-3">
+            {[
+              {
+                q: "How much does it cost?",
+                a: "The base membership is $59/month. That includes access to Sage, your family's living care profile, advance directive support, and ComfortCard. If you need a Letter of Medical Necessity (LMN) to unlock HSA/FSA eligibility, that is $199 for non-members or included with annual membership. Companion care — actual caregiver hours in your home — is priced separately at $400–$12,000/month depending on hours and care intensity. Many families find the membership pays for itself in HSA/FSA tax savings alone ($936/year average)."
+              },
+              {
+                q: "Is this HSA/FSA eligible?",
+                a: "Yes, with a physician-signed Letter of Medical Necessity (LMN). Under IRS Section 213(d), care services that address a diagnosed medical condition are HSA/FSA eligible when supported by a physician's medical necessity documentation. Josh Emdur DO (licensed in all 50 states) reviews and signs LMNs for co-op.care members. This is not a guarantee — eligibility depends on your specific plan and care needs. We recommend confirming with your HSA/FSA plan administrator."
+              },
+              {
+                q: "Can my caregiver be a neighbor or someone I already know?",
+                a: "Yes. If you have someone in mind — a neighbor, a trusted community member, a friend's relative who is interested — we can onboard them as a co-op.care caregiver-owner. They go through the same background check and orientation as all caregivers. The cooperative structure means they earn equity from day one, making them more likely to stay long-term. This is not just allowed — it is often the best outcome."
+              },
+              {
+                q: "What if I need care at night or on weekends?",
+                a: "co-op.care operates 7 days a week, including evenings and weekends. Scheduling happens through Sage — no holding queues, no agency dispatch. Your caregiver-owner sets her availability, and Sage matches scheduling to your family's needs. For live-in or overnight care, we have a separate live-in model. Coverage outside Boulder, CO, is available through our LMN-only national service while we expand the caregiver cooperative geographically."
+              },
+              {
+                q: "How is this different from a home care agency?",
+                a: "Three differences. First, caregivers are worker-owners — they earn $25–28/hr W-2 plus equity, which produces dramatically different retention. Second, every clinical output (LMN, care assessment, advance directive) is physician-supervised by Josh Emdur DO. Third, the $59/month membership includes AI coordination (Sage), living care profile, and ComfortCard — not just caregiver dispatch. Most agencies provide a caregiver. co-op.care provides a care system."
+              },
+              {
+                q: "What states do you serve?",
+                a: "The LMN and physician-supervised care coordination services are available nationally — Josh Emdur DO holds licenses in all 50 states. Companion care (in-home caregivers) is currently available in the Boulder, Colorado area during our founding phase. We are building toward national cooperative expansion. Families outside Colorado can access the membership, Sage, and LMN services today."
+              },
+              {
+                q: "How does the co-op structure protect my family?",
+                a: "co-op.care is organized as a Colorado Limited Cooperative Association (LCA). By law, patron members (caregivers) hold 51% or more of voting control. This means the cooperative cannot be acquired by private equity, cannot be sold to an investor who extracts margin by cutting caregiver pay, and cannot flip its business model. The structure is legally enforced — not just a mission statement."
+              },
+              {
+                q: "What is Sage and does it replace talking to a real person?",
+                a: "Sage is co-op.care's AI care coordinator — a conversational interface built on Claude. Sage handles care needs assessments, builds your family's living profile, and coordinates scheduling. Sage does not replace human caregivers or physician oversight. Think of Sage as the intake coordinator and care manager who is always available: no forms, no hold music, no office hours. All clinical decisions are reviewed by Josh Emdur DO."
+              },
+              {
+                q: "What is ComfortCard?",
+                a: "ComfortCard is a digital health identity card — QR code and NFC — that gives first responders and care providers instant access to your family member's essential health information: medications, allergies, healthcare proxy, and wishes. It lives in Apple Wallet and can be printed. It is built from information Sage captures during regular conversations — not a separate form to fill out."
+              },
+              {
+                q: "When can I start?",
+                a: "Now. The free care needs assessment is available at any time — no forms, just a conversation with Sage. Companion care placement in Boulder, CO, typically takes 3–7 days from assessment to first visit. LMN service is available to members nationally within 48–72 hours of assessment."
+              },
+            ].map((item, i) => (
+              <details key={i} className="group bg-[#F0F5EE] rounded-2xl p-6 cursor-pointer open:bg-white open:border open:border-[#C5D4B5] transition-all">
+                <summary className="font-bold text-[#292524] list-none flex justify-between items-center gap-4">
+                  {item.q}
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 text-[#4A6741] group-open:rotate-180 transition-transform"><path d="M19 9l-7 7-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </summary>
+                <p className="mt-4 text-sm text-[#57534E] leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a href="/assess" className="inline-block px-8 py-4 rounded-full bg-[#4A6741] text-white font-semibold hover:bg-[#292524] transition-colors">Start with a free assessment</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Schema.org */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["MedicalBusiness", "LocalBusiness"],
+          "name": "co-op.care",
+          "description": "Worker-owned, physician-supervised home care cooperative. $59/month membership. HSA/FSA eligible with LMN. Boulder, CO and nationwide LMN service.",
+          "url": "https://co-op.care",
+          "address": { "@type": "PostalAddress", "addressLocality": "Boulder", "addressRegion": "CO", "addressCountry": "US" },
+          "medicalSpecialty": "Geriatric care coordination",
+          "offers": [
+            { "@type": "Offer", "name": "Membership", "price": "59", "priceCurrency": "USD", "billingIncrement": "month", "description": "Sage AI coordination, living care profile, ComfortCard, and LMN support." },
+            { "@type": "Offer", "name": "LMN — Letter of Medical Necessity", "price": "199", "priceCurrency": "USD", "description": "Physician-signed LMN for HSA/FSA eligibility. Josh Emdur DO, 50-state licensed." }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Companion Care",
+            "description": "W-2 caregiver-owners earning $25–28/hr plus equity. Available in Boulder, CO."
+          }
+        })}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How much does co-op.care cost?", "acceptedAnswer": { "@type": "Answer", "text": "The base membership is $59/month. LMN is $199 for non-members. Companion care is $400–$12,000/month depending on hours." } },
+            { "@type": "Question", "name": "Is co-op.care HSA/FSA eligible?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with a physician-signed Letter of Medical Necessity (LMN) under IRS Section 213(d). Josh Emdur DO reviews and signs LMNs for members in all 50 states." } },
+            { "@type": "Question", "name": "What states does co-op.care serve?", "acceptedAnswer": { "@type": "Answer", "text": "LMN and physician-supervised coordination are available nationally. Companion care (in-home caregivers) is currently available in Boulder, Colorado." } }
+          ]
+        })}}
+      />
+
       {/* Medical Disclaimer */}
       <section className="py-6 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
