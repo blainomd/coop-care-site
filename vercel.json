@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/legal", "destination": "https://harnesshealth.ai/legal", "permanent": false },
+    { "source": "/privacy", "destination": "https://harnesshealth.ai/legal/privacy", "permanent": false },
+    { "source": "/terms", "destination": "https://harnesshealth.ai/legal/terms", "permanent": false },
+    { "source": "/security", "destination": "https://harnesshealth.ai/legal/security", "permanent": false },
+    { "source": "/hipaa", "destination": "https://harnesshealth.ai/legal/hipaa", "permanent": false },
+    { "source": "/contact", "destination": "https://harnesshealth.ai/legal/contact", "permanent": false }
+  ]
+}
